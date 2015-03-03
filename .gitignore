@@ -1,0 +1,31 @@
+.DS_Store
+
+# Build
+Build
+build
+DerivedData
+
+# Temp
+*~.nib
+*.swp
+
+# SVN
+.svn
+
+# XCode
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.xcuserdatad
+Foap.xccheckout
+
+# Others
+.uispec.app
+
+# Cocoa Pods
+Pods
+resources-to-copy*
+
+# Utility scripts
+Scripts/strings/exportedStrings

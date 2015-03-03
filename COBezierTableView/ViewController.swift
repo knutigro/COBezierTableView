@@ -8,18 +8,34 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, COBezierTableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+
+        var bezierEditorView = COBezierTableViewEditor(frame: self.view.bounds);
+        bezierEditorView.delegate = self
+        bezierEditorView.dataSource = MyBezierDataSource()
+        
+        bezierEditorView.registerNib(UINib(nibName: "MyBezierTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        self.view .addSubview(bezierEditorView)
+        
+//        var bezierTableView = COBezierTableView(frame: self.view.bounds);
+//        self.view .addSubview(bezierTableView)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    
+    // COBezierTableViewDelegate
+    func bezierTableView(bezierTableView: COBezierTableView, didSelectRowAtIndex index: Int) {
+        
+    }
 
 }
 
