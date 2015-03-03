@@ -93,6 +93,7 @@
 		491AA79A1AA603D100357AA5 /* COBezierTableView */ = {
 			isa = PBXGroup;
 			children = (
+				491AA7BD1AA6040800357AA5 /* COBezierTableView */,
 				491AA79D1AA603D100357AA5 /* AppDelegate.swift */,
 				491AA79F1AA603D100357AA5 /* ViewController.swift */,
 				491AA7C61AA604D700357AA5 /* MyBezierTableViewCell.swift */,
@@ -101,7 +102,6 @@
 				491AA7A11AA603D100357AA5 /* Main.storyboard */,
 				491AA7A41AA603D100357AA5 /* Images.xcassets */,
 				491AA7A61AA603D100357AA5 /* LaunchScreen.xib */,
-				491AA7BD1AA6040800357AA5 /* COBezierTableView */,
 				491AA79B1AA603D100357AA5 /* Supporting Files */,
 			);
 			path = COBezierTableView;
