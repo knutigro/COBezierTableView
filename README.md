@@ -1,6 +1,8 @@
 # COBezierTableView
 
-Swift 
+Custom TableView written in Swift where cells are scrolling in an arc defined by a BezierPath. 
+
+Project even include classes for testing and constructing new BezierPaths for testing new UI.
 
 ## Usage
 
@@ -20,5 +22,5 @@ Knut Inge Grosland, ”hei@knutinge.com”
 
 ## License
 
-GDGeoData is available under the MIT license. See the LICENSE file for more info.
+COBezierTableView is available under the MIT license. See the LICENSE file for more info.
 
