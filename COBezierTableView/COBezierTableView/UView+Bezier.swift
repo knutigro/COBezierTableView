@@ -49,8 +49,15 @@ extension UIView {
             + d * t3;
     }
     
-    func bezierPointFor(t : CGFloat) -> CGPoint {
-        return CGPointMake(bezierInterpolation(t, a: BezierPoints.p1.x, b: BezierPoints.p2.x, c: BezierPoints.p3.x, d: BezierPoints.p4.x), bezierInterpolation(t, a: BezierPoints.p1.y, b: BezierPoints.p2.y, c: BezierPoints.p3.y, d: BezierPoints.p4.y))
+    func bezierXFor(t : CGFloat) -> CGFloat {
+        return bezierInterpolation(t, a: BezierPoints.p1.x, b: BezierPoints.p2.x, c: BezierPoints.p3.x, d: BezierPoints.p4.x)
     }
 
+    func bezierYFor(t : CGFloat) -> CGFloat {
+        return bezierInterpolation(t, a: BezierPoints.p1.y, b: BezierPoints.p2.y, c: BezierPoints.p3.y, d: BezierPoints.p4.y)
+    }
+    
+    func bezierPointFor(t : CGFloat) -> CGPoint {
+        return CGPointMake(bezierXFor(t), bezierYFor(t))
+    }
 }
