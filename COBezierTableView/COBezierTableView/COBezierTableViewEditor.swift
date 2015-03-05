@@ -30,23 +30,28 @@ class COBezierTableViewEditor: COBezierTableView {
             case .Scroll:
                 self.removeGestureRecognizer(self.panGesturerecognizer)
                 self.bezierScrollView.hidden = false
+                self.bezierContentView.hidden = false
                 self.pointSelector.hidden = true
                 self.setNeedsDisplay()
 
             case .EditorAndGraph:
                 self.addGestureRecognizer(self.panGesturerecognizer)
                 self.bezierScrollView.hidden = true
+                self.bezierContentView.hidden = true
                 self.pointSelector.hidden = false
                 self.setNeedsDisplay()
 
             case .GraphAndScroll:
                 self.removeGestureRecognizer(self.panGesturerecognizer)
                 self.bezierScrollView.hidden = false
+                self.bezierContentView.hidden = false
                 self.pointSelector.hidden = true
                 self.setNeedsDisplay()
             }
         }
     }
+    
+    // MARK: Init and setup
 
     required init(coder aDecoder: NSCoder) {
         self.state = .None
@@ -76,7 +81,7 @@ class COBezierTableViewEditor: COBezierTableView {
         var viewSelector = UISegmentedControl(frame: CGRectMake(10, 30, CGRectGetWidth(self.bounds) - 20, 30))
         viewSelector.autoresizingMask = .FlexibleWidth | .FlexibleBottomMargin;
         viewSelector.insertSegmentWithTitle("ScrollView", atIndex: 0, animated: false)
-        viewSelector.insertSegmentWithTitle("ScrollView + Lines", atIndex: 1, animated: false)
+        viewSelector.insertSegmentWithTitle("Scroll + Graph", atIndex: 1, animated: false)
         viewSelector.insertSegmentWithTitle("Editor", atIndex: 2, animated: false)
         viewSelector.addTarget(self, action: Selector("viewSelectorChanged:"), forControlEvents: .ValueChanged)
         viewSelector.selectedSegmentIndex = 1;
@@ -85,6 +90,8 @@ class COBezierTableViewEditor: COBezierTableView {
         self.state = .GraphAndScroll
     }
     
+    // MARK: Drawing
+
     func movePoint(point : CGPoint, byPoint : CGPoint) -> CGPoint {
         var originalPoint = point
         originalPoint.x += byPoint.x
@@ -93,35 +100,8 @@ class COBezierTableViewEditor: COBezierTableView {
         return originalPoint
     }
     
-    func handlePan(recognizer:UIPanGestureRecognizer) {
-        
-        if recognizer.state == .Began {
-            self.startLocation = bezierStaticPoint(self.pointSelector.selectedSegmentIndex)
-        } else if recognizer.state == .Changed {
-            let translation = recognizer.translationInView(self)
-            if let startLocationUnWrapped = self.startLocation {
-                setBezierStaticPoint(movePoint(startLocationUnWrapped, byPoint: translation), forIndex: self.pointSelector.selectedSegmentIndex)
-                self.pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(self.pointSelector.selectedSegmentIndex)), forSegmentAtIndex: self.pointSelector.selectedSegmentIndex)
-                self.setNeedsDisplay()
-            }
-        } else if recognizer.state == .Ended {
-            recognizer.setTranslation(CGPointZero, inView: self)
-        }
-    }
-    
-    func viewSelectorChanged(control : UISegmentedControl) {
-        switch control.selectedSegmentIndex {
-        case 1:
-            self.state = .GraphAndScroll
-        case 2:
-            self.state = .EditorAndGraph
-        default:
-            self.state = .Scroll
-        }
-    }
-
     override func drawRect(rect: CGRect) {
-
+        
         if (self.state == .EditorAndGraph || self.state == .GraphAndScroll) {
             // Draw background
             if let backgroundColor = self.backgroundColor {
@@ -130,7 +110,7 @@ class COBezierTableViewEditor: COBezierTableView {
                 UIColor.blackColor().set()
             }
             UIBezierPath(rect: rect).fill()
-
+            
             // Draw line
             UIColor.brownColor().setStroke()
             var path = UIBezierPath()
@@ -149,6 +129,37 @@ class COBezierTableViewEditor: COBezierTableView {
                 let pointPath = UIBezierPath(arcCenter: point, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
                 pointPath.stroke()
             }
+        }
+    }
+    
+    // MARK: UIPanGestureRecognizer
+    
+    func handlePan(recognizer:UIPanGestureRecognizer) {
+        
+        if recognizer.state == .Began {
+            self.startLocation = bezierStaticPoint(self.pointSelector.selectedSegmentIndex)
+        } else if recognizer.state == .Changed {
+            let translation = recognizer.translationInView(self)
+            if let startLocationUnWrapped = self.startLocation {
+                setBezierStaticPoint(movePoint(startLocationUnWrapped, byPoint: translation), forIndex: self.pointSelector.selectedSegmentIndex)
+                self.pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(self.pointSelector.selectedSegmentIndex)), forSegmentAtIndex: self.pointSelector.selectedSegmentIndex)
+                self.setNeedsDisplay()
+            }
+        } else if recognizer.state == .Ended {
+            recognizer.setTranslation(CGPointZero, inView: self)
+        }
+    }
+    
+    // MARK: UISegmentedControl
+
+    func viewSelectorChanged(control : UISegmentedControl) {
+        switch control.selectedSegmentIndex {
+        case 1:
+            self.state = .GraphAndScroll
+        case 2:
+            self.state = .EditorAndGraph
+        default:
+            self.state = .Scroll
         }
     }
 }

@@ -15,12 +15,4 @@ class MyBezierTableViewCell : COBezierTableViewCell {
     override func prepareForReuse() {
         // Should be overriden in superclass
     }
-    
-    @IBAction func clickedButton(sender: UIButton) {
-        let alert = UIAlertView()
-        alert.title = "BezierListItemView"
-        alert.message = "Here's a message"
-        alert.addButtonWithTitle("OK")
-        alert.show()
-    }
 }

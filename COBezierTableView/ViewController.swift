@@ -17,7 +17,6 @@ class ViewController: UIViewController, COBezierTableViewDelegate {
         var bezierEditorView = COBezierTableViewEditor(frame: self.view.bounds);
         bezierEditorView.delegate = self
         bezierEditorView.dataSource = MyBezierDataSource()
-        
         bezierEditorView.registerNib(UINib(nibName: "MyBezierTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         self.view .addSubview(bezierEditorView)
@@ -31,10 +30,13 @@ class ViewController: UIViewController, COBezierTableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    
     // COBezierTableViewDelegate
     func bezierTableView(bezierTableView: COBezierTableView, didSelectRowAtIndex index: Int) {
-        
+        let alert = UIAlertView()
+        alert.title = "BezierListItemView"
+        alert.message = "Here's a message"
+        alert.addButtonWithTitle("OK")
+        alert.show()
     }
 
 }

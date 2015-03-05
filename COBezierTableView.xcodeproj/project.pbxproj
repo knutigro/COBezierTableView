@@ -96,9 +96,9 @@
 				491AA7BD1AA6040800357AA5 /* COBezierTableView */,
 				491AA79D1AA603D100357AA5 /* AppDelegate.swift */,
 				491AA79F1AA603D100357AA5 /* ViewController.swift */,
+				491AA7C81AA604D700357AA5 /* MyBezierDataSource.swift */,
 				491AA7C61AA604D700357AA5 /* MyBezierTableViewCell.swift */,
 				491AA7C71AA604D700357AA5 /* MyBezierTableViewCell.xib */,
-				491AA7C81AA604D700357AA5 /* MyBezierDataSource.swift */,
 				491AA7A11AA603D100357AA5 /* Main.storyboard */,
 				491AA7A41AA603D100357AA5 /* Images.xcassets */,
 				491AA7A61AA603D100357AA5 /* LaunchScreen.xib */,
@@ -445,6 +445,7 @@
 				491AA7B91AA603D200357AA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		491AA7BA1AA603D200357AA5 /* Build configuration list for PBXNativeTarget "COBezierTableViewTests" */ = {
 			isa = XCConfigurationList;
@@ -453,6 +454,7 @@
 				491AA7BC1AA603D200357AA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

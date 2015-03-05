@@ -16,25 +16,12 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pKq-9q-gFb">
-                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="clickedButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="E86-sm-1w5"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="pKq-9q-gFb" secondAttribute="bottom" id="0lW-3K-5Nf"/>
                 <constraint firstItem="KH3-st-iev" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9Ka-Gw-xKs"/>
-                <constraint firstItem="pKq-9q-gFb" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Veu-hf-WaT"/>
                 <constraint firstItem="KH3-st-iev" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="YnA-xd-HXu"/>
                 <constraint firstAttribute="trailing" secondItem="KH3-st-iev" secondAttribute="trailing" id="foP-0E-TGH"/>
-                <constraint firstAttribute="trailing" secondItem="pKq-9q-gFb" secondAttribute="trailing" id="vz7-SF-KRk"/>
-                <constraint firstItem="pKq-9q-gFb" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="wDy-AQ-71n"/>
                 <constraint firstAttribute="bottom" secondItem="KH3-st-iev" secondAttribute="bottom" id="wjJ-A0-t0y"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
