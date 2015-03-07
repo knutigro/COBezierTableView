@@ -10,8 +10,8 @@ import UIKit
 
 class MyBezierDataSource : COBezierTableViewDataSource {
     
-    func bezierTableView(bezierTableView: COBezierTableView, heightForRowAtIndex index: Int) -> CGFloat {
-        return 50.0
+    func bezierTableView(bezierTableView: COBezierTableView, sizeForCellAtIndex index: Int) -> CGSize {
+        return CGSizeMake(100, 50)
     }
     
     func bezierTableViewCellPadding(bezierTableView: COBezierTableView) -> CGFloat {
@@ -19,7 +19,7 @@ class MyBezierDataSource : COBezierTableViewDataSource {
     }
     
     func bezierTableView(bezierTableView: COBezierTableView, cellForRowAtIndex index: Int) -> COBezierTableViewCell {
-        var cell = bezierTableView.dequeueReusablePageWithIdentifer("cell", forIndex: index) as? MyBezierTableViewCell
+        var cell = bezierTableView.dequeueReusableCellWithIdentifer("cell", forIndex: index) as? MyBezierTableViewCell
         cell?.backgroundColor = UIColor.redColor()
         cell?.textLabel?.text = String(index)
         
@@ -27,7 +27,7 @@ class MyBezierDataSource : COBezierTableViewDataSource {
 
     }
     
-    func bezierTableViewNumberOfRows(bezierTableView: COBezierTableView) -> NSInteger {
+    func bezierTableViewNumberOfCells(bezierTableView: COBezierTableView) -> NSInteger {
         return 30
     }
 }

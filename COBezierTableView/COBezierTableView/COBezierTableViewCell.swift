@@ -24,12 +24,12 @@ class COBezierTableViewCell : UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("_internalHandleTap:")))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("didSelect:")))
     }
 
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("_internalHandleTap:")))
+        self.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("didSelect:")))
     }
     
     func prepareForReuse() {
@@ -38,7 +38,7 @@ class COBezierTableViewCell : UIView {
     
     // MARK: Internal
 
-    internal final func _internalHandleTap(recognizer: UITapGestureRecognizer) {
+    internal final func didSelect(recognizer: UITapGestureRecognizer) {
         self.internalCellDelegate!.bezierTableViewCellDidSelect(self)
     }
 }

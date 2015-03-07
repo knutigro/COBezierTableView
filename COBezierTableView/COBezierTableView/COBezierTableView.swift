@@ -19,28 +19,35 @@ class COBezierScrollView: UIScrollView {
 
 // MARK: - COBezierTableViewDelegate
 protocol COBezierTableViewDelegate:class {
-    func bezierTableView(bezierTableView: COBezierTableView, didSelectRowAtIndex index: Int)
+    func bezierTableView(bezierTableView: COBezierTableView, didSelectCellAtIndex index: Int)
 }
 
 // MARK: - COBezierTableViewDataSource
 protocol COBezierTableViewDataSource:class {
-    func bezierTableView(bezierTableView: COBezierTableView, heightForRowAtIndex index: Int) -> CGFloat
+    func bezierTableView(bezierTableView: COBezierTableView, sizeForCellAtIndex index: Int) -> CGSize
     func bezierTableViewCellPadding(bezierTableView: COBezierTableView) -> CGFloat
     func bezierTableView(bezierTableView: COBezierTableView, cellForRowAtIndex index: Int) -> COBezierTableViewCell
-    func bezierTableViewNumberOfRows(bezierTableView: COBezierTableView) -> NSInteger
+    func bezierTableViewNumberOfCells(bezierTableView: COBezierTableView) -> NSInteger
 }
 
 // MARK: - COBezierTableView
 class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableViewCellDelegate {
 
     weak var delegate:COBezierTableViewDelegate?
-    var dataSource:COBezierTableViewDataSource?
+    var dataSource:COBezierTableViewDataSource? {
+        didSet {
+            let cellHeight = cellSize().height + cellPadding()
+            let numberOfCellsFloat = CGFloat(numberOfCells())
+            let totalCellHeight = cellHeight * numberOfCellsFloat
+            self.bezierScrollView.contentSize =  CGSizeMake(self.bezierScrollView.frame.width, self.bezierScrollView.frame.size.height + totalCellHeight)
+        }
+    }
 
     var bezierScrollView : COBezierScrollView!
     var bezierContentView : UIView!
-    var visiblePages = [COBezierTableViewCell]()
-    var reusablePages = [String : [COBezierTableViewCell]]()
-    var registeredClasses = [String : UIView]()
+    var visibleCells = [Int : COBezierTableViewCell]()
+    var reusableCells = [String : [COBezierTableViewCell]]()
+    var registeredClasses = [String : COBezierTableViewCell.Type]()
     var registeredNibs = [String : UINib]()
 
     // MARK: Init and setup
@@ -67,15 +74,15 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
         self.bezierScrollView = COBezierScrollView(frame: self.bounds)
         self.bezierScrollView.indicatorStyle = .White
         self.bezierScrollView.delegate = self
-        self.bezierScrollView.contentSize = CGSizeMake(self.bezierScrollView.frame.width, self.bezierScrollView.frame.height * 2)
+        self.bezierScrollView.contentSize = self.bounds.size
         self.bezierScrollView.autoresizingMask = .FlexibleWidth | .FlexibleHeight;
         self.addSubview(self.bezierScrollView)
     }
     
     // MARK: Public methods
 
-    final func registerClass(pageClass : UIView, forCellReuseIdentifier identifier : String ) {
-        registeredClasses[identifier] = pageClass
+    final func registerClass(cellClass : COBezierTableViewCell.Type, forCellReuseIdentifier identifier : String ) {
+        registeredClasses[identifier] = cellClass
         registeredNibs.removeValueForKey(identifier)
     }
     
@@ -85,31 +92,31 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
     }
     
     final func reloadData() {
-        for view in visiblePages {
+        for view in visibleCells.values {
             view.removeFromSuperview()
         }
-        visiblePages.removeAll(keepCapacity: false)
-        reusablePages.removeAll(keepCapacity: false)
+        visibleCells.removeAll(keepCapacity: false)
+        reusableCells.removeAll(keepCapacity: false)
         self.setNeedsLayout()
     }
     
-    final func dequeueReusablePageWithIdentifer(identifier : String, forIndex index : Int) -> COBezierTableViewCell? {
-        var set = reusablePagesWithIdentifier(identifier)
+    final func dequeueReusableCellWithIdentifer(identifier : String, forIndex index : Int) -> COBezierTableViewCell? {
+        var set = reusableCellsWithIdentifier(identifier)
         
-        if let reusableView = set.first {
-            reusableView.prepareForReuse()
+        if let reusableCell = set.first {
+            reusableCell.prepareForReuse()
             set.removeAtIndex(0)
             
-            return reusableView
+            return reusableCell
         } else {
-            if let pageClass = registeredClasses[identifier] {
+            if let reusableCell = registeredClasses[identifier] {
                 assert(false, "Class initalisation not implemented")
                 return nil
             }
             
             if let registeredNib = registeredNibs[identifier] {
-                if let reusableView = registeredNib.instantiateWithOwner(self, options: nil)[0] as? COBezierTableViewCell {
-                    return reusableView
+                if let reusableCell = registeredNib.instantiateWithOwner(self, options: nil)[0] as? COBezierTableViewCell {
+                    return reusableCell
                 } else {
                     return nil
                 }
@@ -121,114 +128,94 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
 
     // MARK: UI
 
-    final private func rowHeight() -> CGFloat {
+    final private func cellSize() -> CGSize {
         assert(self.dataSource != nil, "COBezierTableViewDataSource not implemented");
-        return self.dataSource!.bezierTableView(self, heightForRowAtIndex: 0)
+        return self.dataSource!.bezierTableView(self, sizeForCellAtIndex: 0)
     }
     
-    final private func rowPaddding() -> CGFloat {
+    final private func cellPadding() -> CGFloat {
         assert(self.dataSource != nil, "COBezierTableViewDataSource not implemented");
         return self.dataSource!.bezierTableViewCellPadding(self)
     }
     
-    final private func numberOfRows() -> Int {
+    final private func numberOfCells() -> Int {
         assert(self.dataSource != nil, "COBezierListViewDataSource not implemented");
-        return self.dataSource!.bezierTableViewNumberOfRows(self);
+        return self.dataSource!.bezierTableViewNumberOfCells(self);
     }
     
     final private func isDisplayingPageAtIndex(idx : Int) -> Bool {
-        var isDisplayingPage = false
-        for view in visiblePages {
-            if (view.tag == idx) {
-                isDisplayingPage = true
-                break
-            }
-        }
-        
-        return isDisplayingPage
+        return visibleCells[idx] != nil ? true : false
     }
     
     final private func frameForIndex(idx : Int) -> CGRect {
         
         var frame = CGRectZero
-        let height = rowHeight()
-        let width = rowHeight() + 50
-        let rowPadding = rowPaddding()
+        frame.size = cellSize()
+        let padding = cellPadding()
         
-        let offset = (height + rowPadding) * CGFloat(idx)
+        let offset = (frame.size.height + padding) * CGFloat(idx)
         var point = self.bezierScrollView.bezierPosition(offset: offset)
 
         frame.origin.x = point.x
         frame.origin.y = point.y
-        frame.size.width = width
-        frame.size.height = height
 
         return frame
     }
     
     final private func layoutCells() {
         
-        let numberOfRows = self.numberOfRows()
-        assert(self.superview != nil, "Need to have a superview to find visibleBounds!")
-        let visibleBounds = self.self.clipsToBounds ? self.bounds : self .convertRect(self.superview!.bounds, fromView: self.superview)
-        let minY = CGRectGetMinY(visibleBounds)
-        let maxY = CGRectGetMaxY(visibleBounds) - 1
-        let pageHeight = rowHeight() + rowPaddding()
-        
-        var firstNeededIndex = Int(floor(minY / pageHeight))
-        var lastNeededIndex = Int(floor(maxY / pageHeight))
-        
-        firstNeededIndex = max(firstNeededIndex, 0)
-        lastNeededIndex = min(numberOfRows - 1, lastNeededIndex)
-        
-        // remove and queue reusable pages
-        var removedPages = [Int]()
-        
-        for visiblePage in visiblePages {
-            if visiblePage.tag < firstNeededIndex || visiblePage.tag > lastNeededIndex {
-                visiblePage.removeFromSuperview()
-                removedPages.append(visiblePage.tag)
-                queuePageForReuse(visiblePage)
-            }
-        }
-        for idx in removedPages {
-            visiblePages.removeAtIndex(idx)
-        }
-        
+        let numberOfCells = self.numberOfCells()
+        assert(self.bezierContentView.superview != nil, "Need to have a superview to find visibleBounds!")
+        let visibleBounds = self.bezierContentView.clipsToBounds ? self.bezierContentView.bounds : self.bezierContentView.convertRect(self.bezierContentView.superview!.bounds, fromView: self.bezierContentView.superview)
+
         // layout visible pages
-        if numberOfRows > 0 {
-            for idx in firstNeededIndex...lastNeededIndex  {
-                if !isDisplayingPageAtIndex(idx) {
-                    println("will add: " + String(idx))
-                    if let cell = self.dataSource?.bezierTableView(self, cellForRowAtIndex: idx) {
-                        cell.internalCellDelegate = self
-                        cell.frame = frameForIndex(idx)
-                        cell.tag = idx
-                        self.bezierContentView.insertSubview(cell, atIndex: 0)
-                        visiblePages.append(cell)
-                    }
+        for idx in 0...numberOfCells  {
+            if !isDisplayingPageAtIndex(idx) && CGRectIntersectsRect(frameForIndex(idx), visibleBounds) {
+                println("will add: " + String(idx))
+                if let cell = self.dataSource?.bezierTableView(self, cellForRowAtIndex: idx) {
+                    cell.internalCellDelegate = self
+                    cell.frame = frameForIndex(idx)
+                    cell.tag = idx
+                    self.bezierContentView.insertSubview(cell, atIndex: 0)
+                    visibleCells[idx] = cell
                 }
             }
         }
         
+        // remove and queue reusable pages
+        var removedCells = [Int]()
+
+        for visibleCell in visibleCells.values {
+            visibleCell.frame = frameForIndex(visibleCell.tag)
+            if !CGRectIntersectsRect(visibleCell.frame, visibleBounds) {
+                println("will remove: " + String(visibleCell.tag))
+                visibleCell.removeFromSuperview()
+                removedCells.append(visibleCell.tag)
+                queueCellsForReuse(visibleCell)
+            }
+        }
+
+        for idx in removedCells {
+            visibleCells[idx] = nil
+        }
     }
     
     // MARK: Cells and reuse
 
-    final private func reusablePagesWithIdentifier(identifier : String) -> [COBezierTableViewCell] {
-        if let set = reusablePages[identifier] {
+    final private func reusableCellsWithIdentifier(identifier : String) -> [COBezierTableViewCell] {
+        if let set = reusableCells[identifier] {
             return set
         } else {
             var set = [COBezierTableViewCell]()
-            reusablePages[identifier] = set
+            reusableCells[identifier] = set
             return set
         }
     }
     
-    final private func queuePageForReuse(page : COBezierTableViewCell) {
-        if let reuseIdentifier = page.pageReuseIdentifier {
-            var set = reusablePagesWithIdentifier(reuseIdentifier)
-            set.append(page)
+    final private func queueCellsForReuse(cell : COBezierTableViewCell) {
+        if let reuseIdentifier = cell.pageReuseIdentifier {
+            var set = reusableCellsWithIdentifier(reuseIdentifier)
+            set.append(cell)
         }
     }
     
@@ -239,15 +226,11 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
     }
     
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        let t =  scrollView.bounds.size.height - scrollView.contentOffset.y
-        for page in visiblePages {
-            page.frame = frameForIndex(page.tag)
-        }
         setNeedsLayout()
     }
 
     // MARK:  InternalCOBezierTableViewCellDelegate
     func bezierTableViewCellDidSelect(cell: COBezierTableViewCell) {
-        self.delegate!.bezierTableView(self, didSelectRowAtIndex: cell.tag)
+        self.delegate!.bezierTableView(self, didSelectCellAtIndex: cell.tag)
     }
 }

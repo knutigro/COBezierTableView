@@ -31,7 +31,7 @@ class ViewController: UIViewController, COBezierTableViewDelegate {
     }
     
     // COBezierTableViewDelegate
-    func bezierTableView(bezierTableView: COBezierTableView, didSelectRowAtIndex index: Int) {
+    func bezierTableView(bezierTableView: COBezierTableView, didSelectCellAtIndex index: Int) {
         let alert = UIAlertView()
         alert.title = "BezierListItemView"
         alert.message = "Here's a message"
