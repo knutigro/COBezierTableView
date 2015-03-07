@@ -94,14 +94,6 @@ class COBezierTableViewEditor: COBezierTableView {
     
     // MARK: Drawing
 
-    func movePoint(point : CGPoint, byPoint : CGPoint) -> CGPoint {
-        var originalPoint = point
-        originalPoint.x += byPoint.x
-        originalPoint.y += byPoint.y
-        
-        return originalPoint
-    }
-    
     override func drawRect(rect: CGRect) {
         
         if (self.state == .EditorAndGraph || self.state == .GraphAndScroll) {
@@ -143,7 +135,10 @@ class COBezierTableViewEditor: COBezierTableView {
         } else if recognizer.state == .Changed {
             let translation = recognizer.translationInView(self)
             if let startLocationUnWrapped = self.startLocation {
-                setBezierStaticPoint(movePoint(startLocationUnWrapped, byPoint: translation), forIndex: self.pointSelector.selectedSegmentIndex)
+                var pointToMove = startLocationUnWrapped
+                pointToMove.x += translation.x
+                pointToMove.y += translation.y
+                setBezierStaticPoint(pointToMove, forIndex: self.pointSelector.selectedSegmentIndex)
                 self.pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(self.pointSelector.selectedSegmentIndex)), forSegmentAtIndex: self.pointSelector.selectedSegmentIndex)
                 self.setNeedsDisplay()
             }
