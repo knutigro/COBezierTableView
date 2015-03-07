@@ -1,6 +1,6 @@
 # COBezierTableView
 
-[![CI Status](http://img.shields.io/travis/Knut Inge Grosland/COBezierTableView.svg?style=flat)](https://travis-ci.org/Knut Inge Grosland/COBezierTableView)
+[![Build Status](https://travis-ci.org/knutigro/COBezierTableView.svg?branch=master)](https://travis-ci.org/knutigro/COBezierTableView)
 
 Custom TableView written in Swift where cells are scrolling in an arc defined by a BezierPath. 
 
