@@ -32,6 +32,7 @@ class COBezierTableViewEditor: COBezierTableView {
                 self.bezierScrollView.hidden = false
                 self.bezierContentView.hidden = false
                 self.pointSelector.hidden = true
+                self.reloadData()
                 self.setNeedsDisplay()
 
             case .EditorAndGraph:
@@ -46,6 +47,7 @@ class COBezierTableViewEditor: COBezierTableView {
                 self.bezierScrollView.hidden = false
                 self.bezierContentView.hidden = false
                 self.pointSelector.hidden = true
+                self.reloadData()
                 self.setNeedsDisplay()
             }
         }

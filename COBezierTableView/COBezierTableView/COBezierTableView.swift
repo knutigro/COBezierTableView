@@ -92,12 +92,13 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
     }
     
     final func reloadData() {
-        for view in visibleCells.values {
+        for view in bezierContentView.subviews {
             view.removeFromSuperview()
         }
         visibleCells.removeAll(keepCapacity: false)
         reusableCells.removeAll(keepCapacity: false)
         self.setNeedsLayout()
+        self.setNeedsDisplay()
     }
     
     final func dequeueReusableCellWithIdentifer(identifier : String, forIndex index : Int) -> COBezierTableViewCell? {
