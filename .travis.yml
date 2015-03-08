@@ -1,4 +1,4 @@
 language: objective-c
 xcode_project: COBezierTableView.xcodeproj
-xcode_scheme: COBezierTableViewTests
+xcode_scheme: COBezierTableView
 xcode_sdk: iphonesimulator
