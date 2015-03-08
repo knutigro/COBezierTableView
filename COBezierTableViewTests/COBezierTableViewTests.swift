@@ -40,27 +40,24 @@ class COBezierTableViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
         bezierTableView.dataSource = dataSource
         bezierTableView.registerNib(UINib(nibName: "MyBezierTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         bezierTableView.layoutSubviews()
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
     func testDidAddCellsToTableView() {
-        XCTAssertNotEqual(bezierTableView.bezierContentView.subviews.count, dataSource.bezierTableViewNumberOfCells(bezierTableView), "TableView should recycle views and not add all at once")
-
-        // This is an example of a functional test case.
         let totalCells = dataSource.bezierTableViewNumberOfCells(bezierTableView)
         if (totalCells > 0) {
             XCTAssertGreaterThan(bezierTableView.bezierContentView.subviews.count, 0, "TableView should at least add one view if datasource has data")
         } else {
             XCTAssertEqual(bezierTableView.bezierContentView.subviews.count, 0, "If there is 0 items in datasource. Also ")
         }
+        
+        XCTAssertNotEqual(bezierTableView.bezierContentView.subviews.count, dataSource.bezierTableViewNumberOfCells(bezierTableView), "TableView should recycle views and not add all at once")
     }
 
     func testPerformanceLayoutSubviewsSmallDataSource() {
