@@ -10,7 +10,7 @@ import Foundation
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     public struct BezierPoints {
         static var p1 = CGPointMake(-3, -8)

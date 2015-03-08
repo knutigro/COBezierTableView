@@ -8,11 +8,11 @@
 
 import UIKit
 
-class MyBezierTableViewCell : COBezierTableViewCell {
+public class MyBezierTableViewCell : COBezierTableViewCell {
     
     @IBOutlet weak var textLabel: UILabel?
     
-    override func prepareForReuse() {
+    public override func prepareForReuse() {
         // Should be overriden in superclass
     }
 }

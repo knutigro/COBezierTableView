@@ -10,7 +10,7 @@ import UIKit
 import Darwin
 
 // MARK: - COBezierScrollView
-class COBezierScrollView: UIScrollView {
+public class COBezierScrollView: UIScrollView {
     func bezierPosition(#offset : CGFloat) -> CGPoint {
         let y = self.frame.size.height - self.contentOffset.y + offset
         return self.bezierPointFor(y/700)
@@ -18,12 +18,12 @@ class COBezierScrollView: UIScrollView {
 }
 
 // MARK: - COBezierTableViewDelegate
-protocol COBezierTableViewDelegate:class {
+public protocol COBezierTableViewDelegate : class {
     func bezierTableView(bezierTableView: COBezierTableView, didSelectCellAtIndex index: Int)
 }
 
 // MARK: - COBezierTableViewDataSource
-protocol COBezierTableViewDataSource:class {
+public protocol COBezierTableViewDataSource : class {
     func bezierTableView(bezierTableView: COBezierTableView, sizeForCellAtIndex index: Int) -> CGSize
     func bezierTableViewCellPadding(bezierTableView: COBezierTableView) -> CGFloat
     func bezierTableView(bezierTableView: COBezierTableView, cellForRowAtIndex index: Int) -> COBezierTableViewCell
@@ -31,10 +31,10 @@ protocol COBezierTableViewDataSource:class {
 }
 
 // MARK: - COBezierTableView
-class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableViewCellDelegate {
+public class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableViewCellDelegate {
 
-    weak var delegate:COBezierTableViewDelegate?
-    var dataSource:COBezierTableViewDataSource? {
+    public weak var delegate:COBezierTableViewDelegate?
+    public var dataSource:COBezierTableViewDataSource? {
         didSet {
             let cellHeight = cellSize().height + cellPadding()
             let numberOfCellsFloat = CGFloat(numberOfCells())
@@ -43,8 +43,9 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
         }
     }
 
+    public var bezierContentView : UIView!
+
     var bezierScrollView : COBezierScrollView!
-    var bezierContentView : UIView!
     var visibleCells = [Int : COBezierTableViewCell]()
     var reusableCells = [String : [COBezierTableViewCell]]()
     var registeredClasses = [String : COBezierTableViewCell.Type]()
@@ -52,12 +53,12 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
 
     // MARK: Init and setup
 
-    required init(coder aDecoder: NSCoder) {
+    public required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupBezierTableView()
     }
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setupBezierTableView()
     }
@@ -81,17 +82,17 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
     
     // MARK: Public methods
 
-    final func registerClass(cellClass : COBezierTableViewCell.Type, forCellReuseIdentifier identifier : String ) {
+    public final func registerClass(cellClass : COBezierTableViewCell.Type, forCellReuseIdentifier identifier : String ) {
         registeredClasses[identifier] = cellClass
         registeredNibs.removeValueForKey(identifier)
     }
     
-    final func registerNib(nib : UINib, forCellReuseIdentifier identifier : String ) {
+    public final func registerNib(nib : UINib, forCellReuseIdentifier identifier : String ) {
         registeredNibs[identifier] = nib
         registeredClasses.removeValueForKey(identifier)
     }
     
-    final func reloadData() {
+    public final func reloadData() {
         for view in bezierContentView.subviews {
             view.removeFromSuperview()
         }
@@ -101,7 +102,7 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
         self.setNeedsDisplay()
     }
     
-    final func dequeueReusableCellWithIdentifer(identifier : String, forIndex index : Int) -> COBezierTableViewCell? {
+    public final func dequeueReusableCellWithIdentifer(identifier : String, forIndex index : Int) -> COBezierTableViewCell? {
         var set = reusableCellsWithIdentifier(identifier)
         
         if let reusableCell = set.first {
@@ -221,12 +222,12 @@ class COBezierTableView: UIView, UIScrollViewDelegate, InternalCOBezierTableView
     }
     
     // MARK: Layout and scrolling
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         layoutCells()
     }
     
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    public func scrollViewDidScroll(scrollView: UIScrollView) {
         setNeedsLayout()
     }
 

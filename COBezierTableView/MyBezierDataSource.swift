@@ -8,17 +8,17 @@
 
 import UIKit
 
-class MyBezierDataSource : COBezierTableViewDataSource {
+public class MyBezierDataSource : COBezierTableViewDataSource {
     
-    func bezierTableView(bezierTableView: COBezierTableView, sizeForCellAtIndex index: Int) -> CGSize {
+    public func bezierTableView(bezierTableView: COBezierTableView, sizeForCellAtIndex index: Int) -> CGSize {
         return CGSizeMake(100, 50)
     }
     
-    func bezierTableViewCellPadding(bezierTableView: COBezierTableView) -> CGFloat {
+    public func bezierTableViewCellPadding(bezierTableView: COBezierTableView) -> CGFloat {
         return 50.0
     }
     
-    func bezierTableView(bezierTableView: COBezierTableView, cellForRowAtIndex index: Int) -> COBezierTableViewCell {
+    public func bezierTableView(bezierTableView: COBezierTableView, cellForRowAtIndex index: Int) -> COBezierTableViewCell {
         var cell = bezierTableView.dequeueReusableCellWithIdentifer("cell", forIndex: index) as? MyBezierTableViewCell
         cell?.backgroundColor = UIColor.redColor()
         cell?.textLabel?.text = String(index)
@@ -27,7 +27,7 @@ class MyBezierDataSource : COBezierTableViewDataSource {
 
     }
     
-    func bezierTableViewNumberOfCells(bezierTableView: COBezierTableView) -> NSInteger {
+    public func bezierTableViewNumberOfCells(bezierTableView: COBezierTableView) -> NSInteger {
         return 30
     }
 }

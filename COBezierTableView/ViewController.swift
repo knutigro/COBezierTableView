@@ -21,6 +21,8 @@ class ViewController: UIViewController, COBezierTableViewDelegate {
         self.view .addSubview(bezierEditorView)
         
 //        var bezierTableView = COBezierTableView(frame: self.view.bounds);
+//        bezierTableView.dataSource = MyBezierDataSource()
+//        bezierTableView.registerNib(UINib(nibName: "MyBezierTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
 //        self.view .addSubview(bezierTableView)
     }
 

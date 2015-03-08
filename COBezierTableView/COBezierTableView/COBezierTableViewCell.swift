@@ -16,23 +16,23 @@ internal protocol InternalCOBezierTableViewCellDelegate:class {
 
 // MARK: - COBezierTableViewCell
 
-class COBezierTableViewCell : UIView {
+public class COBezierTableViewCell : UIView {
     
     internal weak var internalCellDelegate:InternalCOBezierTableViewCellDelegate?
 
     let pageReuseIdentifier : String?
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("didSelect:")))
     }
 
-    required init(coder aDecoder: NSCoder) {
+    required public init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action:Selector("didSelect:")))
     }
     
-    func prepareForReuse() {
+    public func prepareForReuse() {
         // Should be overriden in superclass 
     }
     
