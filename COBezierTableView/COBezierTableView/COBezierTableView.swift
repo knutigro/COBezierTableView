@@ -12,7 +12,7 @@ import Darwin
 // MARK: - COBezierScrollView
 public class COBezierScrollView: UIScrollView {
     func bezierPosition(#offset : CGFloat) -> CGPoint {
-        let y = self.frame.size.height - self.contentOffset.y + offset
+        let y = offset - self.contentOffset.y
         return self.bezierPointFor(y/700)
     }
 }

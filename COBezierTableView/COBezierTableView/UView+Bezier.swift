@@ -13,10 +13,10 @@ import UIKit
 public extension UIView {
     
     public struct BezierPoints {
-        static var p1 = CGPointMake(-3, -8)
+        static var p1 = CGPointMake(0, 0)
         static var p2 = CGPointMake(200, 248)
         static var p3 = CGPointMake(200, 476)
-        static var p4 = CGPointMake(37, 562)
+        static var p4 = CGPointMake(37, 568)
     }
     
     func bezierStaticPoint(index: Int) -> CGPoint {
