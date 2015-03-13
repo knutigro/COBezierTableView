@@ -8,22 +8,20 @@
 
 import UIKit
 
-class ViewController: UIViewController, COBezierTableViewDelegate {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
 
-        var bezierEditorView = COBezierTableViewEditor(frame: self.view.bounds);
-        bezierEditorView.delegate = self
-        bezierEditorView.dataSource = MyBezierDataSource()
-        bezierEditorView.registerNib(UINib(nibName: "MyBezierTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        self.view .addSubview(bezierEditorView)
+        var bezierEditorView = COBezierTableViewEditor(frame: self.view.bounds)
+        self.view.addSubview(bezierEditorView)
         
-//        var bezierTableView = COBezierTableView(frame: self.view.bounds);
-//        bezierTableView.dataSource = MyBezierDataSource()
-//        bezierTableView.registerNib(UINib(nibName: "MyBezierTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-//        self.view .addSubview(bezierTableView)
+        var bezierTableView = COBezierTableView(frame: self.view.bounds, style: .Plain);
+        bezierTableView.backgroundColor = UIColor.clearColor()
+        bezierTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: COCellIdentifier)
+        bezierTableView.dataSource = self
+        bezierEditorView.bezierTableView = bezierTableView;
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +29,33 @@ class ViewController: UIViewController, COBezierTableViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // COBezierTableViewDelegate
-    func bezierTableView(bezierTableView: COBezierTableView, didSelectCellAtIndex index: Int) {
+    // MARK:  UITableViewDataSource Methods
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(COCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        
+        cell.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
+        cell.textLabel?.text = String(indexPath.row)
+        
+        return cell
+    }
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 30
+    }
+    
+    // MARK:  UITableViewDelegate Methods
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let row = indexPath.row
         let alert = UIAlertView()
         alert.title = "BezierListItemView"
-        alert.message = "didSelectCellAtIndex: " + String(index)
+        alert.message = "didSelectCellAtIndex: " + String(indexPath.row)
         alert.addButtonWithTitle("OK")
         alert.show()
     }
