@@ -104,6 +104,21 @@ class COBezierTableViewEditor: UIView {
         self.state = .GraphAndScroll
     }
     
+    func limitPoint(inout point : CGPoint, withinRect rect : CGRect) {
+        if (point.x > rect.width) {
+            point.x = rect.width
+        }
+        if (point.x < 0) {
+            point.x = 0
+        }
+        if (point.y > rect.height) {
+            point.y = rect.height
+        }
+        if (point.y < 0) {
+            point.y = 0
+        }
+    }
+    
     // MARK: Drawing
 
     override func drawRect(rect: CGRect) {
@@ -150,6 +165,12 @@ class COBezierTableViewEditor: UIView {
                 var pointToMove = startLocationUnWrapped
                 pointToMove.x += translation.x
                 pointToMove.y += translation.y
+                
+                if self.pointSelector.selectedSegmentIndex == 0
+                    || self.pointSelector.selectedSegmentIndex == 3 {
+                    limitPoint(&pointToMove, withinRect: self.bounds)
+                }
+                
                 setBezierStaticPoint(pointToMove, forIndex: self.pointSelector.selectedSegmentIndex)
                 self.pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(self.pointSelector.selectedSegmentIndex)), forSegmentAtIndex: self.pointSelector.selectedSegmentIndex)
                 self.setNeedsDisplay()
