@@ -35,28 +35,33 @@ public class COBezierTableView: UITableView {
     }
 
     final private func setupBezierTableView() {
+        self.rowHeight = 44
         self.backgroundColor = UIColor.blackColor()
     }
     
     // MARK: - Layout
     public override func layoutSubviews() {
-        
-//        mTotalCellsVisible = self.frame.size.height / self.rowHeight;
-//        [self resetContentOffsetIfNeeded];
-        
         super.layoutSubviews()
         layoutVisibleCells()
     }
 
     func layoutVisibleCells() {
+        
         let indexpaths = self.indexPathsForVisibleRows()!;
         let totalVisibleCells = indexpaths.count - 1
-
+        if totalVisibleCells <= 0 { return }
+        
         for index in 0...totalVisibleCells {
             let indexPath = indexpaths[index] as NSIndexPath
             let cell = self.cellForRowAtIndexPath(indexPath)!
             var frame = cell.frame
-            frame.origin.x = bezierYFor(frame.origin.y)
+            let cellOffset = rowHeight * CGFloat(index)
+            
+            if let superView = self.superview {
+                let point = convertPoint(frame.origin, toView:superView)
+                let pointScale = point.y / CGFloat(superView.bounds.size.height)
+                frame.origin.x = bezierXFor(pointScale)
+            }
             cell.frame = frame;
         }
     }
