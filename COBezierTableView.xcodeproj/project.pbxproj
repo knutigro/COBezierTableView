@@ -14,11 +14,8 @@
 		491AA7A81AA603D100357AA5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491AA7A61AA603D100357AA5 /* LaunchScreen.xib */; };
 		491AA7B41AA603D200357AA5 /* COBezierTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AA7B31AA603D200357AA5 /* COBezierTableViewTests.swift */; };
 		491AA7C21AA6040800357AA5 /* COBezierTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AA7BE1AA6040800357AA5 /* COBezierTableView.swift */; };
-		491AA7C31AA6040800357AA5 /* COBezierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AA7BF1AA6040800357AA5 /* COBezierTableViewCell.swift */; };
 		491AA7C41AA6040800357AA5 /* COBezierTableViewEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AA7C01AA6040800357AA5 /* COBezierTableViewEditor.swift */; };
 		491AA7C51AA6040800357AA5 /* UView+Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AA7C11AA6040800357AA5 /* UView+Bezier.swift */; };
-		491AA7C91AA604D700357AA5 /* MyBezierTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AA7C61AA604D700357AA5 /* MyBezierTableViewCell.swift */; };
-		491AA7CA1AA604D700357AA5 /* MyBezierTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 491AA7C71AA604D700357AA5 /* MyBezierTableViewCell.xib */; };
 		491AA7CB1AA604D700357AA5 /* MyBezierDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491AA7C81AA604D700357AA5 /* MyBezierDataSource.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,11 +41,8 @@
 		491AA7B21AA603D100357AA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		491AA7B31AA603D200357AA5 /* COBezierTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBezierTableViewTests.swift; sourceTree = "<group>"; };
 		491AA7BE1AA6040800357AA5 /* COBezierTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierTableView.swift; sourceTree = "<group>"; };
-		491AA7BF1AA6040800357AA5 /* COBezierTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierTableViewCell.swift; sourceTree = "<group>"; };
 		491AA7C01AA6040800357AA5 /* COBezierTableViewEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierTableViewEditor.swift; sourceTree = "<group>"; };
 		491AA7C11AA6040800357AA5 /* UView+Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UView+Bezier.swift"; sourceTree = "<group>"; };
-		491AA7C61AA604D700357AA5 /* MyBezierTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBezierTableViewCell.swift; sourceTree = "<group>"; };
-		491AA7C71AA604D700357AA5 /* MyBezierTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyBezierTableViewCell.xib; sourceTree = "<group>"; };
 		491AA7C81AA604D700357AA5 /* MyBezierDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyBezierDataSource.swift; sourceTree = "<group>"; };
 		491AA7CC1AA6085A00357AA5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,8 +91,6 @@
 				491AA79D1AA603D100357AA5 /* AppDelegate.swift */,
 				491AA79F1AA603D100357AA5 /* ViewController.swift */,
 				491AA7C81AA604D700357AA5 /* MyBezierDataSource.swift */,
-				491AA7C61AA604D700357AA5 /* MyBezierTableViewCell.swift */,
-				491AA7C71AA604D700357AA5 /* MyBezierTableViewCell.xib */,
 				491AA7A11AA603D100357AA5 /* Main.storyboard */,
 				491AA7A41AA603D100357AA5 /* Images.xcassets */,
 				491AA7A61AA603D100357AA5 /* LaunchScreen.xib */,
@@ -136,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				491AA7BE1AA6040800357AA5 /* COBezierTableView.swift */,
-				491AA7BF1AA6040800357AA5 /* COBezierTableViewCell.swift */,
 				491AA7C01AA6040800357AA5 /* COBezierTableViewEditor.swift */,
 				491AA7C11AA6040800357AA5 /* UView+Bezier.swift */,
 			);
@@ -225,7 +216,6 @@
 			files = (
 				491AA7A31AA603D100357AA5 /* Main.storyboard in Resources */,
 				491AA7A81AA603D100357AA5 /* LaunchScreen.xib in Resources */,
-				491AA7CA1AA604D700357AA5 /* MyBezierTableViewCell.xib in Resources */,
 				491AA7A51AA603D100357AA5 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -244,14 +234,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				491AA7C31AA6040800357AA5 /* COBezierTableViewCell.swift in Sources */,
 				491AA7C21AA6040800357AA5 /* COBezierTableView.swift in Sources */,
 				491AA7A01AA603D100357AA5 /* ViewController.swift in Sources */,
 				491AA7C51AA6040800357AA5 /* UView+Bezier.swift in Sources */,
 				491AA79E1AA603D100357AA5 /* AppDelegate.swift in Sources */,
 				491AA7C41AA6040800357AA5 /* COBezierTableViewEditor.swift in Sources */,
 				491AA7CB1AA604D700357AA5 /* MyBezierDataSource.swift in Sources */,
-				491AA7C91AA604D700357AA5 /* MyBezierTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

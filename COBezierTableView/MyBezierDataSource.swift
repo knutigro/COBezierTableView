@@ -8,26 +8,22 @@
 
 import UIKit
 
-public class MyBezierDataSource : COBezierTableViewDataSource {
+class MyBezierDataSource : NSObject, UITableViewDataSource {
     
-    public func bezierTableView(bezierTableView: COBezierTableView, sizeForCellAtIndex index: Int) -> CGSize {
-        return CGSizeMake(100, 50)
-    }
-    
-    public func bezierTableViewCellPadding(bezierTableView: COBezierTableView) -> CGFloat {
-        return 50.0
-    }
-    
-    public func bezierTableView(bezierTableView: COBezierTableView, cellForRowAtIndex index: Int) -> COBezierTableViewCell {
-        var cell = bezierTableView.dequeueReusableCellWithIdentifer("cell", forIndex: index) as? MyBezierTableViewCell
-        cell?.backgroundColor = UIColor.redColor()
-        cell?.textLabel?.text = String(index)
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(COCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
-        return cell!
-
+        cell.backgroundColor = UIColor.redColor()
+        cell.textLabel?.text = String(indexPath.row)
+        
+        return cell
     }
     
-    public func bezierTableViewNumberOfCells(bezierTableView: COBezierTableView) -> NSInteger {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 30
     }
 }

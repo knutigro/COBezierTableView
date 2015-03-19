@@ -9,7 +9,7 @@
 import UIKit
 import Darwin
 
-class COBezierTableViewEditor: COBezierTableView {
+class COBezierTableViewEditor: UIView {
     
     enum COBezierTableViewEditorState {
         case None
@@ -21,6 +21,15 @@ class COBezierTableViewEditor: COBezierTableView {
     var pointSelector : UISegmentedControl!
     var startLocation : CGPoint?
     var panGesturerecognizer : UIPanGestureRecognizer!
+    
+    var bezierTableView : COBezierTableView? {
+        didSet {
+            if let bezierTableView = self.bezierTableView {
+                self.insertSubview(bezierTableView, atIndex: 0)
+            }
+
+        }
+    }
 
     var state : COBezierTableViewEditorState {
         didSet {
@@ -29,25 +38,28 @@ class COBezierTableViewEditor: COBezierTableView {
                 self.setNeedsDisplay()
             case .Scroll:
                 self.removeGestureRecognizer(self.panGesturerecognizer)
-                self.bezierScrollView.hidden = false
-                self.bezierContentView.hidden = false
                 self.pointSelector.hidden = true
-                self.reloadData()
+                if let bezierTableView = self.bezierTableView {
+                    bezierTableView.hidden = false
+                    bezierTableView.reloadData()
+                }
                 self.setNeedsDisplay()
 
             case .EditorAndGraph:
                 self.addGestureRecognizer(self.panGesturerecognizer)
-                self.bezierScrollView.hidden = true
-                self.bezierContentView.hidden = true
                 self.pointSelector.hidden = false
+                if let bezierTableView = self.bezierTableView {
+                    bezierTableView.hidden = true
+                }
                 self.setNeedsDisplay()
 
             case .GraphAndScroll:
                 self.removeGestureRecognizer(self.panGesturerecognizer)
-                self.bezierScrollView.hidden = false
-                self.bezierContentView.hidden = false
                 self.pointSelector.hidden = true
-                self.reloadData()
+                if let bezierTableView = self.bezierTableView {
+                    bezierTableView.hidden = false
+                    bezierTableView.reloadData()
+                }
                 self.setNeedsDisplay()
             }
         }
@@ -66,7 +78,7 @@ class COBezierTableViewEditor: COBezierTableView {
         super.init(frame: frame)
         setupEditorView()
     }
-    
+
     private final func setupEditorView() {
         
         self.panGesturerecognizer = UIPanGestureRecognizer(target: self, action: Selector("handlePan:"))
@@ -138,6 +150,21 @@ class COBezierTableViewEditor: COBezierTableView {
                 var pointToMove = startLocationUnWrapped
                 pointToMove.x += translation.x
                 pointToMove.y += translation.y
+                
+                if self.pointSelector.selectedSegmentIndex == 0 || self.pointSelector.selectedSegmentIndex == 3 {
+                    if (pointToMove.x > self.bounds.width) {
+                        pointToMove.x = self.bounds.width
+                    }
+                    if (pointToMove.x < 0) {
+                        pointToMove.x = 0
+                    }
+                    if self.pointSelector.selectedSegmentIndex == 0 {
+                        pointToMove.y = 0
+                    } else {
+                        pointToMove.y = self.bounds.size.height
+                    }
+                }
+                
                 setBezierStaticPoint(pointToMove, forIndex: self.pointSelector.selectedSegmentIndex)
                 self.pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(self.pointSelector.selectedSegmentIndex)), forSegmentAtIndex: self.pointSelector.selectedSegmentIndex)
                 self.setNeedsDisplay()
