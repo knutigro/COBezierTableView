@@ -9,16 +9,6 @@
 import UIKit
 import Darwin
 
-let COCellIdentifier = "Cell"
-
-// MARK: - COBezierScrollView
-public class COBezierScrollView: UIScrollView {
-    func bezierPosition(#offset : CGFloat) -> CGPoint {
-        let y = offset - self.contentOffset.y
-        return self.bezierPointFor(y/700)
-    }
-}
-
 // MARK: - COBezierTableView
 public class COBezierTableView: UITableView {
 
@@ -35,8 +25,6 @@ public class COBezierTableView: UITableView {
     }
 
     final private func setupBezierTableView() {
-        self.rowHeight = 44
-        self.backgroundColor = UIColor.blackColor()
     }
     
     // MARK: - Layout
@@ -55,7 +43,6 @@ public class COBezierTableView: UITableView {
             let indexPath = indexpaths[index] as NSIndexPath
             let cell = self.cellForRowAtIndexPath(indexPath)!
             var frame = cell.frame
-            let cellOffset = rowHeight * CGFloat(index)
             
             if let superView = self.superview {
                 let point = convertPoint(frame.origin, toView:superView)

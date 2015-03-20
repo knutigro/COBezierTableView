@@ -8,16 +8,77 @@
         <scene sceneID="NVm-p7-15R">
             <objects>
                 <tableViewController storyboardIdentifier="COBezierViewController" title="COBezierViewController" id="u99-Mo-sAn" customClass="COBezierViewController" customModule="COBezierTableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="nSH-1p-y7t" customClass="COBezierTableView" customModule="COBezierTableViewDemo" customModuleProvider="target">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" id="nSH-1p-y7t" customClass="COBezierTableView" customModule="COBezierTableViewDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Gb6-hP-HRx" userLabel="Header">
+                            <rect key="frame" x="0.0" y="64" width="600" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anp-1D-7VK">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="Anp-1D-7VK" secondAttribute="trailing" id="07u-UO-m2t"/>
+                                <constraint firstItem="Anp-1D-7VK" firstAttribute="top" secondItem="Gb6-hP-HRx" secondAttribute="top" id="2jz-gS-pHT"/>
+                                <constraint firstItem="Anp-1D-7VK" firstAttribute="leading" secondItem="Gb6-hP-HRx" secondAttribute="leading" id="Kqg-EL-PKK"/>
+                                <constraint firstAttribute="bottom" secondItem="Anp-1D-7VK" secondAttribute="bottom" id="VeL-mK-OuU"/>
+                            </constraints>
+                        </view>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="iR0-XI-dva" userLabel="Footer">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Footer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSy-Ae-wPd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="pSy-Ae-wPd" secondAttribute="bottom" id="2Mz-m1-Ytb"/>
+                                <constraint firstItem="pSy-Ae-wPd" firstAttribute="top" secondItem="iR0-XI-dva" secondAttribute="top" id="33s-3V-smX"/>
+                                <constraint firstAttribute="trailing" secondItem="pSy-Ae-wPd" secondAttribute="trailing" id="5hR-CI-HEi"/>
+                                <constraint firstItem="pSy-Ae-wPd" firstAttribute="leading" secondItem="iR0-XI-dva" secondAttribute="leading" id="hf5-WM-RcF"/>
+                            </constraints>
+                        </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="EvK-Qv-fMP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="EvK-Qv-fMP">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EvK-Qv-fMP" id="joO-Nu-dfH">
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SiJ-7a-iNc">
+                                            <rect key="frame" x="0.0" y="5" width="100" height="50"/>
+                                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="100" id="6pb-49-s6E"/>
+                                                <constraint firstAttribute="height" constant="50" id="IbC-YX-vQJ"/>
+                                            </constraints>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                    <integer key="value" value="5"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="SiJ-7a-iNc" firstAttribute="leading" secondItem="joO-Nu-dfH" secondAttribute="leading" id="fM9-TI-QIq"/>
+                                        <constraint firstAttribute="centerY" secondItem="SiJ-7a-iNc" secondAttribute="centerY" id="msW-zO-c5m"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -25,7 +86,7 @@
                             <outlet property="delegate" destination="u99-Mo-sAn" id="hfq-AG-V6J"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Demo" id="1KY-Cq-VvL">
+                    <navigationItem key="navigationItem" title="COBezierTableView" id="1KY-Cq-VvL">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="Jni-Co-xHf">
                             <connections>
                                 <segue destination="V9D-Tf-3wF" kind="show" identifier="openBezierEditorSegue" id="ZJS-tt-onb"/>
@@ -37,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="328" y="303"/>
         </scene>
-        <!--Editor-->
+        <!--Select and drag-->
         <scene sceneID="PGF-16-3vs">
             <objects>
-                <viewController title="Editor" id="V9D-Tf-3wF" customClass="COBezierEditorViewController" customModule="COBezierTableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Select and drag" id="V9D-Tf-3wF" customClass="COBezierEditorViewController" customModule="COBezierTableViewDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hoq-LU-Fld"/>
                         <viewControllerLayoutGuide type="bottom" id="07L-mQ-914"/>
@@ -48,7 +109,7 @@
                     <view key="view" contentMode="scaleToFill" id="BVO-Hi-xkE" customClass="COBezierTableViewEditor" customModule="COBezierTableViewDemo" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDn-zI-yxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -70,6 +131,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8lN-Iu-NRx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-337" y="303"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Ct-sS-R97">
+            <objects>
+                <viewController id="lKh-Q9-bjZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GdQ-h4-mgQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="9Cm-gT-MuL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tmq-75-3kz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8eb-g8-ncl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
 </document>

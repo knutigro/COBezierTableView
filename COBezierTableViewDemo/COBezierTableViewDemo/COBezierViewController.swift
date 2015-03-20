@@ -37,16 +37,16 @@ class COBezierViewController: UITableViewController, UITableViewDelegate, UITabl
     // MARK:  UITableViewDataSource Methods
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(COCellIdentifier, forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
-        cell.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
-        cell.textLabel?.text = String(indexPath.row)
+//        cell.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
+//        cell.textLabel?.text = String(indexPath.row)
         
         return cell
     }
     
     override  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     override  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
