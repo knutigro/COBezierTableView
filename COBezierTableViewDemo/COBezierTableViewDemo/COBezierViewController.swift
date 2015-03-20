@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  COBezierViewController.swift
 //  COBezierTableViewDemo
 //
 //  Created by Knut Inge Grosland on 2015-03-20.
@@ -8,20 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class COBezierViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var bezierEditorView = COBezierTableViewEditor(frame: self.view.bounds)
-        self.view.addSubview(bezierEditorView)
-        
-        var bezierTableView = COBezierTableView(frame: self.view.bounds, style: .Plain);
-        bezierTableView.backgroundColor = UIColor.clearColor()
-        bezierTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: COCellIdentifier)
-        bezierTableView.dataSource = self
-        bezierEditorView.bezierTableView = bezierTableView;
+//        bezierEditorView.bezierTableView = bezierTableView;
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,9 +22,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Navigation
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//          if segue.identifier == "openBezierEditorSegue" {
+//            if let destination = segue.destinationViewController as? UIViewController {
+//                if let bezierTableViewEditor = destination.view as? COBezierTableViewEditor {
+//                    var bezierTableView = self.tableView as? COBezierTableView;
+//                    bezierTableViewEditor.bezierTableView = bezierTableView?.copy() as? COBezierTableView;
+//                }
+//            }
+//        }
+//    }
+    
     // MARK:  UITableViewDataSource Methods
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(COCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
         cell.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.5)
@@ -40,16 +45,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override  func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 30
     }
     
     // MARK:  UITableViewDelegate Methods
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         let row = indexPath.row
@@ -59,7 +64,4 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addButtonWithTitle("OK")
         alert.show()
     }
-    
 }
-
-
