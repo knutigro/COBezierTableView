@@ -1,0 +1,445 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		49FEF0FC1ABC127B00E75579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */; };
+		49FEF0FE1ABC127B00E75579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF0FD1ABC127B00E75579 /* ViewController.swift */; };
+		49FEF1011ABC127B00E75579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF0FF1ABC127B00E75579 /* Main.storyboard */; };
+		49FEF1031ABC127B00E75579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1021ABC127B00E75579 /* Images.xcassets */; };
+		49FEF1061ABC127B00E75579 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1041ABC127B00E75579 /* LaunchScreen.xib */; };
+		49FEF1121ABC127B00E75579 /* COBezierTableViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1111ABC127B00E75579 /* COBezierTableViewDemoTests.swift */; };
+		49FEF11F1ABC165D00E75579 /* COBezierTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF11C1ABC165D00E75579 /* COBezierTableView.swift */; };
+		49FEF1201ABC165D00E75579 /* COBezierTableViewEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF11D1ABC165D00E75579 /* COBezierTableViewEditor.swift */; };
+		49FEF1211ABC165D00E75579 /* UView+Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF11E1ABC165D00E75579 /* UView+Bezier.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		49FEF10C1ABC127B00E75579 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49FEF0EE1ABC127A00E75579 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49FEF0F51ABC127A00E75579;
+			remoteInfo = COBezierTableViewDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		49FEF0F61ABC127A00E75579 /* COBezierTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COBezierTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FEF0FA1ABC127B00E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49FEF0FD1ABC127B00E75579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		49FEF1001ABC127B00E75579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		49FEF1021ABC127B00E75579 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		49FEF1051ABC127B00E75579 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		49FEF10B1ABC127B00E75579 /* COBezierTableViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = COBezierTableViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		49FEF1101ABC127B00E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49FEF1111ABC127B00E75579 /* COBezierTableViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBezierTableViewDemoTests.swift; sourceTree = "<group>"; };
+		49FEF11C1ABC165D00E75579 /* COBezierTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierTableView.swift; sourceTree = "<group>"; };
+		49FEF11D1ABC165D00E75579 /* COBezierTableViewEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierTableViewEditor.swift; sourceTree = "<group>"; };
+		49FEF11E1ABC165D00E75579 /* UView+Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UView+Bezier.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		49FEF0F31ABC127A00E75579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49FEF1081ABC127B00E75579 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		49FEF0ED1ABC127A00E75579 = {
+			isa = PBXGroup;
+			children = (
+				49FEF0F81ABC127A00E75579 /* COBezierTableViewDemo */,
+				49FEF10E1ABC127B00E75579 /* COBezierTableViewDemoTests */,
+				49FEF0F71ABC127A00E75579 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		49FEF0F71ABC127A00E75579 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF0F61ABC127A00E75579 /* COBezierTableViewDemo.app */,
+				49FEF10B1ABC127B00E75579 /* COBezierTableViewDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		49FEF0F81ABC127A00E75579 /* COBezierTableViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF11B1ABC165D00E75579 /* COBezierTableView */,
+				49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */,
+				49FEF0FD1ABC127B00E75579 /* ViewController.swift */,
+				49FEF0FF1ABC127B00E75579 /* Main.storyboard */,
+				49FEF1021ABC127B00E75579 /* Images.xcassets */,
+				49FEF1041ABC127B00E75579 /* LaunchScreen.xib */,
+				49FEF0F91ABC127B00E75579 /* Supporting Files */,
+			);
+			path = COBezierTableViewDemo;
+			sourceTree = "<group>";
+		};
+		49FEF0F91ABC127B00E75579 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF0FA1ABC127B00E75579 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49FEF10E1ABC127B00E75579 /* COBezierTableViewDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF1111ABC127B00E75579 /* COBezierTableViewDemoTests.swift */,
+				49FEF10F1ABC127B00E75579 /* Supporting Files */,
+			);
+			path = COBezierTableViewDemoTests;
+			sourceTree = "<group>";
+		};
+		49FEF10F1ABC127B00E75579 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF1101ABC127B00E75579 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		49FEF11B1ABC165D00E75579 /* COBezierTableView */ = {
+			isa = PBXGroup;
+			children = (
+				49FEF11C1ABC165D00E75579 /* COBezierTableView.swift */,
+				49FEF11D1ABC165D00E75579 /* COBezierTableViewEditor.swift */,
+				49FEF11E1ABC165D00E75579 /* UView+Bezier.swift */,
+			);
+			name = COBezierTableView;
+			path = ../../COBezierTableView;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		49FEF0F51ABC127A00E75579 /* COBezierTableViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49FEF1151ABC127B00E75579 /* Build configuration list for PBXNativeTarget "COBezierTableViewDemo" */;
+			buildPhases = (
+				49FEF0F21ABC127A00E75579 /* Sources */,
+				49FEF0F31ABC127A00E75579 /* Frameworks */,
+				49FEF0F41ABC127A00E75579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = COBezierTableViewDemo;
+			productName = COBezierTableViewDemo;
+			productReference = 49FEF0F61ABC127A00E75579 /* COBezierTableViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		49FEF10A1ABC127B00E75579 /* COBezierTableViewDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49FEF1181ABC127B00E75579 /* Build configuration list for PBXNativeTarget "COBezierTableViewDemoTests" */;
+			buildPhases = (
+				49FEF1071ABC127B00E75579 /* Sources */,
+				49FEF1081ABC127B00E75579 /* Frameworks */,
+				49FEF1091ABC127B00E75579 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				49FEF10D1ABC127B00E75579 /* PBXTargetDependency */,
+			);
+			name = COBezierTableViewDemoTests;
+			productName = COBezierTableViewDemoTests;
+			productReference = 49FEF10B1ABC127B00E75579 /* COBezierTableViewDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		49FEF0EE1ABC127A00E75579 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = Cocmoc;
+				TargetAttributes = {
+					49FEF0F51ABC127A00E75579 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					49FEF10A1ABC127B00E75579 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 49FEF0F51ABC127A00E75579;
+					};
+				};
+			};
+			buildConfigurationList = 49FEF0F11ABC127A00E75579 /* Build configuration list for PBXProject "COBezierTableViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 49FEF0ED1ABC127A00E75579;
+			productRefGroup = 49FEF0F71ABC127A00E75579 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				49FEF0F51ABC127A00E75579 /* COBezierTableViewDemo */,
+				49FEF10A1ABC127B00E75579 /* COBezierTableViewDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		49FEF0F41ABC127A00E75579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FEF1011ABC127B00E75579 /* Main.storyboard in Resources */,
+				49FEF1061ABC127B00E75579 /* LaunchScreen.xib in Resources */,
+				49FEF1031ABC127B00E75579 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49FEF1091ABC127B00E75579 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		49FEF0F21ABC127A00E75579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FEF11F1ABC165D00E75579 /* COBezierTableView.swift in Sources */,
+				49FEF1201ABC165D00E75579 /* COBezierTableViewEditor.swift in Sources */,
+				49FEF0FE1ABC127B00E75579 /* ViewController.swift in Sources */,
+				49FEF1211ABC165D00E75579 /* UView+Bezier.swift in Sources */,
+				49FEF0FC1ABC127B00E75579 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49FEF1071ABC127B00E75579 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49FEF1121ABC127B00E75579 /* COBezierTableViewDemoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		49FEF10D1ABC127B00E75579 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49FEF0F51ABC127A00E75579 /* COBezierTableViewDemo */;
+			targetProxy = 49FEF10C1ABC127B00E75579 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49FEF0FF1ABC127B00E75579 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FEF1001ABC127B00E75579 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		49FEF1041ABC127B00E75579 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49FEF1051ABC127B00E75579 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		49FEF1131ABC127B00E75579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49FEF1141ABC127B00E75579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		49FEF1161ABC127B00E75579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = COBezierTableViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		49FEF1171ABC127B00E75579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = COBezierTableViewDemo/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		49FEF1191ABC127B00E75579 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = COBezierTableViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/COBezierTableViewDemo.app/COBezierTableViewDemo";
+			};
+			name = Debug;
+		};
+		49FEF11A1ABC127B00E75579 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = COBezierTableViewDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/COBezierTableViewDemo.app/COBezierTableViewDemo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		49FEF0F11ABC127A00E75579 /* Build configuration list for PBXProject "COBezierTableViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FEF1131ABC127B00E75579 /* Debug */,
+				49FEF1141ABC127B00E75579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49FEF1151ABC127B00E75579 /* Build configuration list for PBXNativeTarget "COBezierTableViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FEF1161ABC127B00E75579 /* Debug */,
+				49FEF1171ABC127B00E75579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49FEF1181ABC127B00E75579 /* Build configuration list for PBXNativeTarget "COBezierTableViewDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49FEF1191ABC127B00E75579 /* Debug */,
+				49FEF11A1ABC127B00E75579 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 49FEF0EE1ABC127A00E75579 /* Project object */;
+}

@@ -1,19 +1,19 @@
 //
 //  ViewController.swift
-//  COBezierTableView
+//  COBezierTableViewDemo
 //
-//  Created by Knut Inge Grosland on 2015-03-03.
+//  Created by Knut Inge Grosland on 2015-03-20.
 //  Copyright (c) 2015 Cocmoc. All rights reserved.
 //
 
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-
+        
         var bezierEditorView = COBezierTableViewEditor(frame: self.view.bounds)
         self.view.addSubview(bezierEditorView)
         
@@ -23,14 +23,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         bezierTableView.dataSource = self
         bezierEditorView.bezierTableView = bezierTableView;
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     // MARK:  UITableViewDataSource Methods
-
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier(COCellIdentifier, forIndexPath: indexPath) as UITableViewCell
         
@@ -59,6 +59,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         alert.addButtonWithTitle("OK")
         alert.show()
     }
-
+    
 }
+
 
