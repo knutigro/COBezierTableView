@@ -5,20 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>094DB510-F186-4B85-B981-B406F10C78AE</string>
+	<string>1DDC80ED-DDC7-4F78-8F89-118DBB0AAB11</string>
 	<key>IDESourceControlProjectName</key>
-	<string>COBezierTableView</string>
+	<string>COBezierTableViewDemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>D7CC837C1335803460BC1201294EFAA1A5A17C02</key>
 		<string>github.com:knutigro/COBezierTableView.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>COBezierTableView.xcodeproj</string>
+	<string>COBezierTableViewDemo/COBezierTableViewDemo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>D7CC837C1335803460BC1201294EFAA1A5A17C02</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:knutigro/COBezierTableView.git</string>

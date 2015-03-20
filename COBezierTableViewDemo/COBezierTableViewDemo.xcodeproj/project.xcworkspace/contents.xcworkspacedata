@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:COBezierTableView.xcodeproj">
+      location = "self:COBezierTableViewDemo.xcodeproj">
    </FileRef>
 </Workspace>

@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  COBezierTableView
+//  COBezierTableViewDemo
 //
-//  Created by Knut Inge Grosland on 2015-03-03.
+//  Created by Knut Inge Grosland on 2015-03-20.
 //  Copyright (c) 2015 Cocmoc. All rights reserved.
 //
 
