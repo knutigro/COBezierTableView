@@ -9,7 +9,7 @@
 import UIKit
 import Darwin
 
-class COBezierTableViewEditor: UIView {
+class COBezierEditorView: UIView {
     
     var pointSelector : UISegmentedControl!
     var startLocation : CGPoint?

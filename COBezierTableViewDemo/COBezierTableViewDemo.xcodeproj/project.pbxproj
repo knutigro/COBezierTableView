@@ -7,16 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4901C01E1AC0967100B5DC92 /* COBezierDemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901C01D1AC0967100B5DC92 /* COBezierDemoCell.swift */; };
+		4901C0201AC0A08A00B5DC92 /* COBezierDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901C01F1AC0A08A00B5DC92 /* COBezierDemoViewController.swift */; };
+		4901C0241AC0AA7700B5DC92 /* COBezierTableView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4901C0221AC0AA7700B5DC92 /* COBezierTableView.podspec */; };
+		4901C0251AC0AA7700B5DC92 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4901C0231AC0AA7700B5DC92 /* LICENSE */; };
+		4901C0271AC0AA9500B5DC92 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 4901C0261AC0AA9500B5DC92 /* README.md */; };
 		49FEF0FC1ABC127B00E75579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */; };
 		49FEF1011ABC127B00E75579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF0FF1ABC127B00E75579 /* Main.storyboard */; };
 		49FEF1031ABC127B00E75579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1021ABC127B00E75579 /* Images.xcassets */; };
 		49FEF1061ABC127B00E75579 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1041ABC127B00E75579 /* LaunchScreen.xib */; };
 		49FEF1121ABC127B00E75579 /* COBezierTableViewDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1111ABC127B00E75579 /* COBezierTableViewDemoTests.swift */; };
 		49FEF11F1ABC165D00E75579 /* COBezierTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF11C1ABC165D00E75579 /* COBezierTableView.swift */; };
-		49FEF1201ABC165D00E75579 /* COBezierTableViewEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF11D1ABC165D00E75579 /* COBezierTableViewEditor.swift */; };
+		49FEF1201ABC165D00E75579 /* COBezierEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF11D1ABC165D00E75579 /* COBezierEditorView.swift */; };
 		49FEF1211ABC165D00E75579 /* UView+Bezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF11E1ABC165D00E75579 /* UView+Bezier.swift */; };
-		49FEF1231ABC2EF500E75579 /* COBezierViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1221ABC2EF500E75579 /* COBezierViewController.swift */; };
-		49FEF1251ABC319200E75579 /* COBezierEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF1241ABC319200E75579 /* COBezierEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4901C01D1AC0967100B5DC92 /* COBezierDemoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierDemoCell.swift; sourceTree = "<group>"; };
+		4901C01F1AC0A08A00B5DC92 /* COBezierDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierDemoViewController.swift; sourceTree = "<group>"; };
+		4901C0221AC0AA7700B5DC92 /* COBezierTableView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COBezierTableView.podspec; path = ../COBezierTableView.podspec; sourceTree = "<group>"; };
+		4901C0231AC0AA7700B5DC92 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		4901C0261AC0AA9500B5DC92 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		49FEF0F61ABC127A00E75579 /* COBezierTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COBezierTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FEF0FA1ABC127B00E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,10 +48,8 @@
 		49FEF1101ABC127B00E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FEF1111ABC127B00E75579 /* COBezierTableViewDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COBezierTableViewDemoTests.swift; sourceTree = "<group>"; };
 		49FEF11C1ABC165D00E75579 /* COBezierTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierTableView.swift; sourceTree = "<group>"; };
-		49FEF11D1ABC165D00E75579 /* COBezierTableViewEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierTableViewEditor.swift; sourceTree = "<group>"; };
+		49FEF11D1ABC165D00E75579 /* COBezierEditorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierEditorView.swift; sourceTree = "<group>"; };
 		49FEF11E1ABC165D00E75579 /* UView+Bezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UView+Bezier.swift"; sourceTree = "<group>"; };
-		49FEF1221ABC2EF500E75579 /* COBezierViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierViewController.swift; sourceTree = "<group>"; };
-		49FEF1241ABC319200E75579 /* COBezierEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = COBezierEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +70,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4901C0211AC0AA2700B5DC92 /* Podspec Metadata */ = {
+			isa = PBXGroup;
+			children = (
+				4901C0221AC0AA7700B5DC92 /* COBezierTableView.podspec */,
+				4901C0231AC0AA7700B5DC92 /* LICENSE */,
+				4901C0261AC0AA9500B5DC92 /* README.md */,
+			);
+			name = "Podspec Metadata";
+			sourceTree = "<group>";
+		};
 		49FEF0ED1ABC127A00E75579 = {
 			isa = PBXGroup;
 			children = (
+				4901C0211AC0AA2700B5DC92 /* Podspec Metadata */,
 				49FEF0F81ABC127A00E75579 /* COBezierTableViewDemo */,
 				49FEF10E1ABC127B00E75579 /* COBezierTableViewDemoTests */,
 				49FEF0F71ABC127A00E75579 /* Products */,
@@ -87,8 +104,8 @@
 			children = (
 				49FEF11B1ABC165D00E75579 /* COBezierTableView */,
 				49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */,
-				49FEF1221ABC2EF500E75579 /* COBezierViewController.swift */,
-				49FEF1241ABC319200E75579 /* COBezierEditorViewController.swift */,
+				4901C01D1AC0967100B5DC92 /* COBezierDemoCell.swift */,
+				4901C01F1AC0A08A00B5DC92 /* COBezierDemoViewController.swift */,
 				49FEF0FF1ABC127B00E75579 /* Main.storyboard */,
 				49FEF1021ABC127B00E75579 /* Images.xcassets */,
 				49FEF1041ABC127B00E75579 /* LaunchScreen.xib */,
@@ -126,7 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				49FEF11C1ABC165D00E75579 /* COBezierTableView.swift */,
-				49FEF11D1ABC165D00E75579 /* COBezierTableViewEditor.swift */,
+				49FEF11D1ABC165D00E75579 /* COBezierEditorView.swift */,
 				49FEF11E1ABC165D00E75579 /* UView+Bezier.swift */,
 			);
 			name = COBezierTableView;
@@ -216,6 +233,8 @@
 				49FEF1011ABC127B00E75579 /* Main.storyboard in Resources */,
 				49FEF1061ABC127B00E75579 /* LaunchScreen.xib in Resources */,
 				49FEF1031ABC127B00E75579 /* Images.xcassets in Resources */,
+				4901C0241AC0AA7700B5DC92 /* COBezierTableView.podspec in Resources */,
+				4901C0251AC0AA7700B5DC92 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,10 +253,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49FEF11F1ABC165D00E75579 /* COBezierTableView.swift in Sources */,
-				49FEF1251ABC319200E75579 /* COBezierEditorViewController.swift in Sources */,
-				49FEF1201ABC165D00E75579 /* COBezierTableViewEditor.swift in Sources */,
-				49FEF1231ABC2EF500E75579 /* COBezierViewController.swift in Sources */,
+				4901C01E1AC0967100B5DC92 /* COBezierDemoCell.swift in Sources */,
+				49FEF1201ABC165D00E75579 /* COBezierEditorView.swift in Sources */,
+				4901C0271AC0AA9500B5DC92 /* README.md in Sources */,
 				49FEF1211ABC165D00E75579 /* UView+Bezier.swift in Sources */,
+				4901C0201AC0A08A00B5DC92 /* COBezierDemoViewController.swift in Sources */,
 				49FEF0FC1ABC127B00E75579 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

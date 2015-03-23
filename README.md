@@ -10,6 +10,8 @@ Project even include classes for testing and constructing new BezierPaths for te
 
 COBezierTableView can be imported into both Swift and Objective-C projects.
 
+![Output sample](https://github.com/knutigro/COBezierTableView/Media/COBezier.gif)
+
 Objective-C: 
 
 ```Objective-C
@@ -17,6 +19,29 @@ Objective-C:
 ```
 
 ## Installation
+
+COBezierTableView is available through [CocoaPod](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects.
+
+CocoaPods 0.36 adds supports for Swift and embedded frameworks. You can install it with the following command:
+
+```
+$ gem install cocoapods
+```
+
+To integrate COBezierTableView into your Xcode project using CocoaPods, specify it in your Podfile:
+
+```
+pod 'COBezierTableView', '~> 0.1'
+```
+
+Then, run the following command:
+
+```
+$ pod install
+```
 
 ## Author
 

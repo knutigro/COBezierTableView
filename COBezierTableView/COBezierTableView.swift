@@ -41,15 +41,16 @@ public class COBezierTableView: UITableView {
         
         for index in 0...totalVisibleCells {
             let indexPath = indexpaths[index] as NSIndexPath
-            let cell = self.cellForRowAtIndexPath(indexPath)!
-            var frame = cell.frame
-            
-            if let superView = self.superview {
-                let point = convertPoint(frame.origin, toView:superView)
-                let pointScale = point.y / CGFloat(superView.bounds.size.height)
-                frame.origin.x = bezierXFor(pointScale)
+            if let cell = self.cellForRowAtIndexPath(indexPath) {
+                var frame = cell.frame
+                
+                if let superView = self.superview {
+                    let point = convertPoint(frame.origin, toView:superView)
+                    let pointScale = point.y / CGFloat(superView.bounds.size.height)
+                    frame.origin.x = bezierXFor(pointScale)
+                }
+                cell.frame = frame;
             }
-            cell.frame = frame;
         }
     }
 }
