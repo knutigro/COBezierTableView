@@ -10,11 +10,11 @@
 Pod::Spec.new do |s|
   s.name             = "COBezierTableView"
   s.version          = "0.1.0"
-  s.summary          = "Custom TableView written in Swift where cells are scrolling in an arc defined by a BezierPath"
+  s.summary          = "UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath"
   s.description      = <<-DESC
-                        Custom TableView written in Swift where cells are scrolling in an arc defined by a BezierPath.
+                        UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath.
 
-                        Project even include classes for testing and constructing new BezierPaths for testing new UI
+                        Project even include classes for editing BezierPaths. When you are happy with your path, insert the static points to the BezierPoints struct in UView+Bezier.swift.
                         DESC
   s.homepage         = "https://github.com/knutigro/COBezierTableView"
   s.license          = 'MIT'
