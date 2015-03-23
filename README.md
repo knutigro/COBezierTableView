@@ -2,15 +2,15 @@
 
 [![Build Status](https://travis-ci.org/knutigro/COBezierTableView.svg?branch=master)](https://travis-ci.org/knutigro/COBezierTableView)
 
-Custom TableView written in Swift where cells are scrolling in an arc defined by a BezierPath. 
+UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath. 
 
-Project even include classes for testing and constructing new BezierPaths for testing new UI.
+Project even include classes for editing BezierPaths. When you are happy with your path, insert the static points to the `BezierPoints` struct in `UView+Bezier.swift`.
+
+![Output sample](https://raw.githubusercontent.com/knutigro/COBezierTableView/master/Media/COBezier.gif)
 
 ## Usage
 
 COBezierTableView can be imported into both Swift and Objective-C projects.
-
-![Output sample](https://raw.githubusercontent.com/knutigro/COBezierTableView/master/Media/COBezier.gif)
 
 Objective-C: 
 
