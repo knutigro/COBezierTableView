@@ -1,6 +1,9 @@
 # COBezierTableView
 
 [![Build Status](https://travis-ci.org/knutigro/COBezierTableView.svg?branch=master)](https://travis-ci.org/knutigro/COBezierTableView)
+[![Version](https://img.shields.io/cocoapods/v/COBezierTableView.svg?style=flat)](http://cocoadocs.org/docsets/COBezierTableView)
+[![License](https://img.shields.io/cocoapods/l/COBezierTableView.svg?style=flat)](http://cocoadocs.org/docsets/COBezierTableView)
+[![Platform](https://img.shields.io/cocoapods/p/COBezierTableView.svg?style=flat)](http://cocoadocs.org/docsets/COBezierTableView)
 
 UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath. 
 
