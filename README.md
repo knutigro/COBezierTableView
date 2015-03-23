@@ -10,7 +10,7 @@ Project even include classes for testing and constructing new BezierPaths for te
 
 COBezierTableView can be imported into both Swift and Objective-C projects.
 
-![Output sample](https://github.com/knutigro/COBezierTableView/tree/master/Media/COBezier.gif)
+![Output sample](https://raw.githubusercontent.com/knutigro/COBezierTableView/master/Media/COBezier.gif)
 
 Objective-C: 
 
