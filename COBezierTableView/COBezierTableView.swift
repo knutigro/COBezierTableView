@@ -7,27 +7,11 @@
 //
 
 import UIKit
-import Darwin
 
-// MARK: - COBezierTableView
 public class COBezierTableView: UITableView {
 
-    // MARK: Init and setup
-
-    override init(frame: CGRect, style: UITableViewStyle) {
-        super.init(frame: frame, style: style)
-        setupBezierTableView()
-    }
-    
-    public required init(coder aDecoder: NSCoder) {
-        super.init(coder : aDecoder)
-        setupBezierTableView()
-    }
-
-    final private func setupBezierTableView() {
-    }
-    
     // MARK: - Layout
+
     public override func layoutSubviews() {
         super.layoutSubviews()
         layoutVisibleCells()

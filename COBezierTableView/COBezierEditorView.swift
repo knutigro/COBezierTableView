@@ -19,7 +19,6 @@ class COBezierEditorView: UIView {
             if let bezierTableView = self.bezierTableView {
                 self.insertSubview(bezierTableView, atIndex: 0)
             }
-
         }
     }
 
