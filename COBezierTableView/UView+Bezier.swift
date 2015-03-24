@@ -13,10 +13,22 @@ import UIKit
 public extension UIView {
     
     public struct BezierPoints {
-        static var p1 = CGPointMake(0, 0)
-        static var p2 = CGPointMake(200, 248)
-        static var p3 = CGPointMake(200, 476)
-        static var p4 = CGPointMake(37, 568)
+        static var p1 = CGPointZero
+        static var p2 = CGPointZero
+        static var p3 = CGPointZero
+        static var p4 = CGPointZero
+    }
+    
+    func updateBezierPointsIfNeeded(frame : CGRect) {
+        if BezierPoints.p1 == CGPointZero
+           && BezierPoints.p2 == CGPointZero
+           && BezierPoints.p3 == CGPointZero
+           && BezierPoints.p4 == CGPointZero {
+            BezierPoints.p1 = CGPointMake(0, 0)
+            BezierPoints.p2 = CGPointMake(floor( frame.size.height / 3), floor(frame.size.height / 3))
+            BezierPoints.p3 = CGPointMake(floor(frame.size.height / 3), floor(frame.size.height / 2))
+            BezierPoints.p4 = CGPointMake(40, frame.size.height)
+        }
     }
     
     func bezierStaticPoint(index: Int) -> CGPoint {

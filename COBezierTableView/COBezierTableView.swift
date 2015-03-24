@@ -14,6 +14,7 @@ public class COBezierTableView: UITableView {
 
     public override func layoutSubviews() {
         super.layoutSubviews()
+        updateBezierPointsIfNeeded(self.bounds)
         layoutVisibleCells()
     }
 

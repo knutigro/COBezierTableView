@@ -48,6 +48,11 @@ class COBezierEditorView: UIView {
         self.addSubview(self.pointSelector)
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        updateBezierPointsIfNeeded(self.bounds)
+    }
+    
     // MARK: Drawing
 
     override func drawRect(rect: CGRect) {
@@ -90,8 +95,8 @@ class COBezierEditorView: UIView {
             let translation = recognizer.translationInView(self)
             if let startLocationUnWrapped = self.startLocation {
                 var pointToMove = startLocationUnWrapped
-                pointToMove.x += translation.x
-                pointToMove.y += translation.y
+                pointToMove.x += floor(translation.x)
+                pointToMove.y += floor(translation.y)
                 
                 if self.pointSelector.selectedSegmentIndex == 0 || self.pointSelector.selectedSegmentIndex == 3 {
                     if (pointToMove.x > self.bounds.width) {
