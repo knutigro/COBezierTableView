@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "COBezierTableView"
-  s.version          = "0.1.3"
+  s.version          = "0.1.4"
   s.summary          = "UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath"
   s.description      = <<-DESC
                         UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath.
@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/knutigro/COBezierTableView"
   s.license          = 'MIT'
   s.author           = { "Knut Inge Grosland" => "”hei@knutinge.com”" }
-  s.source           = { :git => "https://github.com/knutigro/COBezierTableView.git", :tag => "0.1.3" }
+  s.source           = { :git => "https://github.com/knutigro/COBezierTableView.git", :tag => "0.1.4" }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
