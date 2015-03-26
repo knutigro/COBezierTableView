@@ -19,11 +19,11 @@ Pod::Spec.new do |s|
   s.homepage         = "https://github.com/knutigro/COBezierTableView"
   s.license          = 'MIT'
   s.author           = { "Knut Inge Grosland" => "”hei@knutinge.com”" }
-  s.source           = { :git => "https://github.com/knutigro/COBezierTableView.git", :tag => "0.1.4" }
+  s.source           = { :git => "https://github.com/knutigro/COBezierTableView.git", :tag => s.version }
 
   s.platform     = :ios, '8.0'
   s.requires_arc = true
 
-  s.source_files = 'COBezierTableView/*'
+  s.source_files = 'COBezierTableView/*.swift'
 
 end
