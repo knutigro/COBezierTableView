@@ -10,6 +10,23 @@ import UIKit
 
 class COBezierDemoViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        let rect = self.view.bounds
+
+        /*
+          Example of setting up custom static points for usage with COBezierTableView
+          This initalization is optional
+          Typically after finding your preferred static points, (using the COBezierEditorView)
+          you would insert these points here.
+        */
+        UIView.BezierPoints.p1 = CGPointMake(0, 0)
+        UIView.BezierPoints.p2 = CGPointMake(floor(rect.size.height / 3), floor(rect.size.height / 3))
+        UIView.BezierPoints.p3 = CGPointMake(floor(rect.size.height / 3), floor(rect.size.height / 2))
+        UIView.BezierPoints.p4 = CGPointMake(40, rect.size.height)
+    }
+    
     // MARK:  UITableViewDataSource Methods
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
