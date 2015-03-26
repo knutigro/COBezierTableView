@@ -2,9 +2,28 @@
 //  COBezierTableViewEditor.swift
 //  COBezierTableView
 //
-//  Created by Knut Inge Grosland on 2015-02-23.
-//  Copyright (c) 2015 Cocmoc. All rights reserved.
+//  Created by Knut Inge Grosland on 2015-02-24.
+//  Copyright (c) 2015 Knut Inge Grosland
 //
+//Permission is hereby granted, free of charge, to any person obtaining a copy
+//of this software and associated documentation files (the "Software"), to deal
+//in the Software without restriction, including without limitation the rights
+//to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//copies of the Software, and to permit persons to whom the Software is
+//furnished to do so, subject to the following conditions:
+//
+//The above copyright notice and this permission notice shall be included in
+//all copies or substantial portions of the Software.
+//
+//THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//THE SOFTWARE.
+//
+
 
 import UIKit
 import Darwin
@@ -39,12 +58,12 @@ class COBezierEditorView: UIView {
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: Selector("handlePan:")))
 
         self.pointSelector = UISegmentedControl(frame: CGRectMake(10, CGRectGetMaxY(self.bounds) - 40, CGRectGetWidth(self.bounds) - 20, 30))
-        self.pointSelector.autoresizingMask = .FlexibleWidth | .FlexibleTopMargin;
+        self.pointSelector.autoresizingMask = .FlexibleWidth | .FlexibleTopMargin
         self.pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(0)), atIndex: 0, animated: false)
         self.pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(1)), atIndex: 1, animated: false)
         self.pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(2)), atIndex: 2, animated: false)
         self.pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(3)), atIndex: 3, animated: false)
-        self.pointSelector.selectedSegmentIndex = 0;
+        self.pointSelector.selectedSegmentIndex = 0
         self.addSubview(self.pointSelector)
     }
     
