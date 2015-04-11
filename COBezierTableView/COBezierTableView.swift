@@ -44,7 +44,7 @@ public class COBezierTableView: UITableView {
         if totalVisibleCells <= 0 { return }
         
         for index in 0...totalVisibleCells {
-            let indexPath = indexpaths[index] as NSIndexPath
+            let indexPath = indexpaths[index] as! NSIndexPath
             if let cell = self.cellForRowAtIndexPath(indexPath) {
                 var frame = cell.frame
                 

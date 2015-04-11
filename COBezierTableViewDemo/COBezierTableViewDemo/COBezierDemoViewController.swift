@@ -30,7 +30,7 @@ class COBezierDemoViewController: UITableViewController, UITableViewDelegate, UI
     // MARK:  UITableViewDataSource Methods
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as COBezierDemoCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! COBezierDemoCell
         
         return cell
     }
