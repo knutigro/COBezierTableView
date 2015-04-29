@@ -11,6 +11,7 @@
 		4901C0201AC0A08A00B5DC92 /* COBezierDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4901C01F1AC0A08A00B5DC92 /* COBezierDemoViewController.swift */; };
 		4901C0241AC0AA7700B5DC92 /* COBezierTableView.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4901C0221AC0AA7700B5DC92 /* COBezierTableView.podspec */; };
 		4901C0251AC0AA7700B5DC92 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 4901C0231AC0AA7700B5DC92 /* LICENSE */; };
+		497DF3351AF1892E00EDE48D /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 497DF3341AF1892E00EDE48D /* Default-568h@2x.png */; };
 		49FEF0FC1ABC127B00E75579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */; };
 		49FEF1011ABC127B00E75579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF0FF1ABC127B00E75579 /* Main.storyboard */; };
 		49FEF1031ABC127B00E75579 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49FEF1021ABC127B00E75579 /* Images.xcassets */; };
@@ -36,6 +37,7 @@
 		4901C0221AC0AA7700B5DC92 /* COBezierTableView.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = COBezierTableView.podspec; path = ../COBezierTableView.podspec; sourceTree = "<group>"; };
 		4901C0231AC0AA7700B5DC92 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		4901C0261AC0AA9500B5DC92 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		497DF3341AF1892E00EDE48D /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		49FEF0F61ABC127A00E75579 /* COBezierTableViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COBezierTableViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49FEF0FA1ABC127B00E75579 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FEF0FB1ABC127B00E75579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		49FEF0ED1ABC127A00E75579 = {
 			isa = PBXGroup;
 			children = (
+				497DF3341AF1892E00EDE48D /* Default-568h@2x.png */,
 				4901C0211AC0AA2700B5DC92 /* Podspec Metadata */,
 				49FEF0F81ABC127A00E75579 /* COBezierTableViewDemo */,
 				49FEF10E1ABC127B00E75579 /* COBezierTableViewDemoTests */,
@@ -229,6 +232,7 @@
 				49FEF1011ABC127B00E75579 /* Main.storyboard in Resources */,
 				49FEF1031ABC127B00E75579 /* Images.xcassets in Resources */,
 				4901C0241AC0AA7700B5DC92 /* COBezierTableView.podspec in Resources */,
+				497DF3351AF1892E00EDE48D /* Default-568h@2x.png in Resources */,
 				4901C0251AC0AA7700B5DC92 /* LICENSE in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
