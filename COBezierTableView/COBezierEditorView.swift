@@ -58,7 +58,7 @@ class COBezierEditorView: UIView {
         self.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: Selector("handlePan:")))
 
         self.pointSelector = UISegmentedControl(frame: CGRectMake(10, CGRectGetMaxY(self.bounds) - 40, CGRectGetWidth(self.bounds) - 20, 30))
-        self.pointSelector.autoresizingMask = .FlexibleWidth | .FlexibleTopMargin
+        self.pointSelector.autoresizingMask = [.FlexibleWidth, .FlexibleTopMargin]
         self.pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(0)), atIndex: 0, animated: false)
         self.pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(1)), atIndex: 1, animated: false)
         self.pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(2)), atIndex: 2, animated: false)
@@ -86,7 +86,7 @@ class COBezierEditorView: UIView {
         
         // Draw line
         UIColor.brownColor().setStroke()
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         
         path.moveToPoint(bezierStaticPoint(0))
         path.addCurveToPoint(bezierStaticPoint(3), controlPoint1: bezierStaticPoint(1), controlPoint2: bezierStaticPoint(2))
