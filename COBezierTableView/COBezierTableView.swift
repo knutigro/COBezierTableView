@@ -39,12 +39,12 @@ public class COBezierTableView: UITableView {
 
     func layoutVisibleCells() {
         
-        let indexpaths = self.indexPathsForVisibleRows()!
+        let indexpaths = self.indexPathsForVisibleRows!
         let totalVisibleCells = indexpaths.count - 1
         if totalVisibleCells <= 0 { return }
         
         for index in 0...totalVisibleCells {
-            let indexPath = indexpaths[index] as! NSIndexPath
+            let indexPath = indexpaths[index] as NSIndexPath
             if let cell = self.cellForRowAtIndexPath(indexPath) {
                 var frame = cell.frame
                 
