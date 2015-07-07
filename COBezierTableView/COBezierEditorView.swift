@@ -33,14 +33,6 @@ class COBezierEditorView: UIView {
     var pointSelector : UISegmentedControl!
     var startLocation : CGPoint?
     
-    var bezierTableView : COBezierTableView? {
-        didSet {
-            if let bezierTableView = self.bezierTableView {
-                self.insertSubview(bezierTableView, atIndex: 0)
-            }
-        }
-    }
-
     // MARK: Init and setup
 
     required init(coder aDecoder: NSCoder) {
