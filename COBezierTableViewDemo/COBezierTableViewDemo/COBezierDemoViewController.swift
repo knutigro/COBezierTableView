@@ -13,7 +13,7 @@ class COBezierDemoViewController: UITableViewController, UITableViewDelegate, UI
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let rect = self.view.bounds
+        let rect = view.bounds
 
         /*
           Example of setting up custom static points for usage with COBezierTableView
@@ -47,7 +47,7 @@ class COBezierDemoViewController: UITableViewController, UITableViewDelegate, UI
     
     @IBAction func buttonTapped(sender: UIButton) {
         if let cell = sender.superview?.superview as? COBezierDemoCell {
-            if let indexPath = self.tableView.indexPathForCell(cell) {
+            if let indexPath = tableView.indexPathForCell(cell) {
                 let row = indexPath.row
                 let alert = UIAlertView()
                 alert.title = "COBezierTableView"

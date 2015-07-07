@@ -14,8 +14,8 @@ class COBezierDemoCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.button?.backgroundColor = getRandomColor()
-        self.backgroundColor = UIColor.clearColor()
+        button?.backgroundColor = getRandomColor()
+        backgroundColor = UIColor.clearColor()
     }
 
     func getRandomColor() -> UIColor{
