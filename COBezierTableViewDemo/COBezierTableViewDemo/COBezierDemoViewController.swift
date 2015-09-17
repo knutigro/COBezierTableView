@@ -8,7 +8,7 @@
 
 import UIKit
 
-class COBezierDemoViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class COBezierDemoViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,6 @@ class COBezierDemoViewController: UITableViewController, UITableViewDelegate, UI
     @IBAction func buttonTapped(sender: UIButton) {
         if let cell = sender.superview?.superview as? COBezierDemoCell {
             if let indexPath = tableView.indexPathForCell(cell) {
-                let row = indexPath.row
                 let alert = UIAlertView()
                 alert.title = "COBezierTableView"
                 alert.message = "Tapped: " + String(indexPath.row)
