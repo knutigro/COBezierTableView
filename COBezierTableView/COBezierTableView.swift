@@ -50,11 +50,23 @@ public class COBezierTableView: UITableView {
                 
                 if let superView = superview {
                     let point = convertPoint(frame.origin, toView:superView)
-                    let pointScale = point.y / CGFloat(superView.bounds.size.height)
-                    frame.origin.x = bezierXFor(pointScale)
+                    let pointScale = distanceTop(frame.origin)
+                    if cell.tag == totalVisibleCells {
+                        println("pointScale \(pointScale)")
+                    }
+                    frame.origin.x = bezierXFor(distanceTop(frame.origin))
+                    
+                    let rotation = CGFloat(degreesToRadians((1-Float(pointScale))*15))
+                    cell.contentView.layer.anchorPoint = CGPointMake(0.5, 0.5)
+                    cell.contentView.transform = CGAffineTransformMakeRotation(rotation)
                 }
                 cell.frame = frame
             }
         }
+    }
+    
+    func degreesToRadians(degrees: Float) -> Float {
+        let pi = Float(M_PI)
+        return pi * degrees / 180.0
     }
 }

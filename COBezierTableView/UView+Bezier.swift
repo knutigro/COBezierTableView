@@ -90,4 +90,22 @@ public extension UIView {
     func bezierPointFor(t : CGFloat) -> CGPoint {
         return CGPointMake(bezierXFor(t), bezierYFor(t))
     }
+    
+    func distanceTop(point : CGPoint) -> CGFloat {
+        if let superView = self.superview {
+            let relativePoint = convertPoint(point, toView:superView)
+            return relativePoint.y / CGFloat(superView.bounds.size.height)
+        } else {
+            return 0
+        }
+    }
+
+    func distanceBottom(point : CGPoint) -> CGFloat {
+        if let superView = self.superview {
+            let relativePoint = convertPoint(point, toView:superView)
+            return 1 - (relativePoint.y / CGFloat(bounds.size.height))
+        } else {
+            return 0
+        }
+    }
 }
