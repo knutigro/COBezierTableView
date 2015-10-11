@@ -46,14 +46,12 @@ class COBezierDemoViewController: UITableViewController {
     // MARK:  Actions
     
     @IBAction func buttonTapped(sender: UIButton) {
-        if let cell = sender.superview?.superview as? COBezierDemoCell {
-            if let indexPath = tableView.indexPathForCell(cell) {
-                let alert = UIAlertView()
-                alert.title = "COBezierTableView"
-                alert.message = "Tapped: " + String(indexPath.row)
-                alert.addButtonWithTitle("OK")
-                alert.show()
-            }
+        if let cell = sender.superview?.superview as? COBezierDemoCell, let indexPath = tableView.indexPathForCell(cell) {
+            let alert = UIAlertView()
+            alert.title = "COBezierTableView"
+            alert.message = "Tapped: " + String(indexPath.row)
+            alert.addButtonWithTitle("OK")
+            alert.show()
         }
     }
 }

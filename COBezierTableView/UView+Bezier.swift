@@ -51,21 +51,21 @@ public extension UIView {
     
     func bezierStaticPoint(index: Int) -> CGPoint {
         switch index {
-        case 0 : return BezierPoints.p1
-        case 1 : return BezierPoints.p2
-        case 2 : return BezierPoints.p3
-        case 3 : return BezierPoints.p4
-        default : return CGPointZero
+            case 0: return BezierPoints.p1
+            case 1: return BezierPoints.p2
+            case 2: return BezierPoints.p3
+            case 3: return BezierPoints.p4
+            default: return CGPointZero
         }
     }
 
     func setBezierStaticPoint(point: CGPoint, forIndex index: Int) {
         switch index {
-        case 0 : BezierPoints.p1 = point
-        case 1 : BezierPoints.p2 = point
-        case 2 : BezierPoints.p3 = point
-        case 3 : BezierPoints.p4 = point
-        default: CGPointZero
+            case 0: BezierPoints.p1 = point
+            case 1: BezierPoints.p2 = point
+            case 2: BezierPoints.p3 = point
+            case 3: BezierPoints.p4 = point
+            default: CGPointZero
         }
     }
     
