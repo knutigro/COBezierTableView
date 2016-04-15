@@ -47,7 +47,7 @@ class COBezierEditorView: UIView {
 
     private final func setupEditorView() {
         
-        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: Selector("handlePan:")))
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))))
 
         pointSelector = UISegmentedControl(frame: CGRectMake(10, CGRectGetMaxY(bounds) - 40, CGRectGetWidth(bounds) - 20, 30))
         pointSelector.autoresizingMask = [.FlexibleWidth, .FlexibleTopMargin]
