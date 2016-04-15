@@ -9,7 +9,7 @@
 
 Pod::Spec.new do |s|
   s.name             = "COBezierTableView"
-  s.version          = "0.1.6"
+  s.version          = "1.0.0"
   s.summary          = "UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath"
   s.description      = <<-DESC
                         UITableView modification written in Swift where cells are scrolling in an arc defined by a BezierPath.
