@@ -45,16 +45,16 @@ class COBezierEditorView: UIView {
         setupEditorView()
     }
 
-    private final func setupEditorView() {
+    fileprivate final func setupEditorView() {
         
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))))
 
-        pointSelector = UISegmentedControl(frame: CGRectMake(10, CGRectGetMaxY(bounds) - 40, CGRectGetWidth(bounds) - 20, 30))
-        pointSelector.autoresizingMask = [.FlexibleWidth, .FlexibleTopMargin]
-        pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(0)), atIndex: 0, animated: false)
-        pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(1)), atIndex: 1, animated: false)
-        pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(2)), atIndex: 2, animated: false)
-        pointSelector.insertSegmentWithTitle(NSStringFromCGPoint(bezierStaticPoint(3)), atIndex: 3, animated: false)
+        pointSelector = UISegmentedControl(frame: CGRect(x: 10, y: bounds.maxY - 40, width: bounds.width - 20, height: 30))
+        pointSelector.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
+        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(0)), at: 0, animated: false)
+        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(1)), at: 1, animated: false)
+        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(2)), at: 2, animated: false)
+        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(3)), at: 3, animated: false)
         pointSelector.selectedSegmentIndex = 0
         addSubview(pointSelector)
     }
@@ -66,44 +66,48 @@ class COBezierEditorView: UIView {
     
     // MARK: Drawing
 
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         
         // Draw background
         if let backgroundColor = self.backgroundColor {
             backgroundColor.set()
         } else {
-            UIColor.blackColor().set()
+            UIColor.black.set()
         }
         UIBezierPath(rect: rect).fill()
         
         // Draw line
-        UIColor.brownColor().setStroke()
+        UIColor.brown.setStroke()
         let path = UIBezierPath()
         
-        path.moveToPoint(bezierStaticPoint(0))
-        path.addCurveToPoint(bezierStaticPoint(3), controlPoint1: bezierStaticPoint(1), controlPoint2: bezierStaticPoint(2))
+        path.move(to: bezierStaticPoint(0))
+        path.addCurve(to: bezierStaticPoint(3), controlPoint1: bezierStaticPoint(1), controlPoint2: bezierStaticPoint(2))
         path.stroke()
         
         // Draw circles
-        UIColor.redColor().setStroke()
-        for (var t : CGFloat = 0.0; t <= 1.00001; t += 0.05) {
+        UIColor.red.setStroke()
+        
+        var t : CGFloat = 0.0
+        while t <= 1.00001 {
             let point = bezierPointFor(t)
             let radius : CGFloat = 5.0
             let endAngle : CGFloat = 2.0 * CGFloat(M_PI)
             
             let pointPath = UIBezierPath(arcCenter: point, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
             pointPath.stroke()
+            
+            t += 0.05
         }
     }
     
     // MARK: UIPanGestureRecognizer
     
-    func handlePan(recognizer:UIPanGestureRecognizer) {
+    func handlePan(_ recognizer:UIPanGestureRecognizer) {
         
-        if recognizer.state == .Began {
+        if recognizer.state == .began {
             startLocation = bezierStaticPoint(pointSelector.selectedSegmentIndex)
-        } else if recognizer.state == .Changed {
-            let translation = recognizer.translationInView(self)
+        } else if recognizer.state == .changed {
+            let translation = recognizer.translation(in: self)
             if let startLocationUnWrapped = startLocation {
                 var pointToMove = startLocationUnWrapped
                 pointToMove.x += floor(translation.x)
@@ -124,11 +128,11 @@ class COBezierEditorView: UIView {
                 }
                 
                 setBezierStaticPoint(pointToMove, forIndex: pointSelector.selectedSegmentIndex)
-                pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(pointSelector.selectedSegmentIndex)), forSegmentAtIndex: pointSelector.selectedSegmentIndex)
+                pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(pointSelector.selectedSegmentIndex)), forSegmentAt: pointSelector.selectedSegmentIndex)
                 setNeedsDisplay()
             }
-        } else if recognizer.state == .Ended {
-            recognizer.setTranslation(CGPointZero, inView: self)
+        } else if recognizer.state == .ended {
+            recognizer.setTranslation(CGPoint.zero, in: self)
         }
     }
 }
