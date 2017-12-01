@@ -31,10 +31,10 @@ import UIKit
 public extension UIView {
     
     public struct BezierPoints {
-        static var p1 = CGPoint.zero
-        static var p2 = CGPoint.zero
-        static var p3 = CGPoint.zero
-        static var p4 = CGPoint.zero
+        public static var p1 = CGPoint.zero
+        public static var p2 = CGPoint.zero
+        public static var p3 = CGPoint.zero
+        public static var p4 = CGPoint.zero
     }
     
     func updateBezierPointsIfNeeded(_ frame : CGRect) {
