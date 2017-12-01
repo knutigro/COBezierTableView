@@ -27,11 +27,11 @@
 
 import UIKit
 
-public class COBezierTableView: UITableView {
+open class COBezierTableView: UITableView {
 
     // MARK: - Layout
 
-    public override func layoutSubviews() {
+    open override func layoutSubviews() {
         super.layoutSubviews()
         updateBezierPointsIfNeeded(bounds)
         layoutVisibleCells()
@@ -46,11 +46,11 @@ public class COBezierTableView: UITableView {
         
         for index in 0...totalVisibleCells {
             let indexPath = indexpaths[index] 
-            if let cell = cellForRowAtIndexPath(indexPath) {
+            if let cell = cellForRow(at: indexPath) {
                 var frame = cell.frame
                 
                 if let superView = superview {
-                    let point = convertPoint(frame.origin, toView:superView)
+                    let point = convert(frame.origin, to:superView)
                     let pointScale = point.y / CGFloat(superView.bounds.size.height)
                     frame.origin.x = bezierXFor(pointScale)
                 }
