@@ -91,8 +91,7 @@ class COBezierEditorView: UIView {
         while t <= 1.00001 {
             let point = bezierPointFor(t)
             let radius : CGFloat = 5.0
-            let endAngle : CGFloat = 2.0 * CGFloat(M_PI)
-            
+            let endAngle : CGFloat = 2.0 * CGFloat(Float.pi)
             let pointPath = UIBezierPath(arcCenter: point, radius: radius, startAngle: 0, endAngle: endAngle, clockwise: true)
             pointPath.stroke()
             
@@ -102,7 +101,7 @@ class COBezierEditorView: UIView {
     
     // MARK: UIPanGestureRecognizer
     
-    func handlePan(_ recognizer:UIPanGestureRecognizer) {
+    @objc func handlePan(_ recognizer:UIPanGestureRecognizer) {
         
         if recognizer.state == .began {
             startLocation = bezierStaticPoint(pointSelector.selectedSegmentIndex)
