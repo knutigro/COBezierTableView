@@ -1,5 +1,6 @@
-# COBezierTableView [![codebeat badge](https://codebeat.co/badges/c92594f9-6b0f-4f40-b62b-04bf2cd04fe4)](https://codebeat.co/projects/github-com-knutigro-cobeziertableview)
+# COBezierTableView 
 
+[![codebeat badge](https://codebeat.co/badges/c92594f9-6b0f-4f40-b62b-04bf2cd04fe4)](https://codebeat.co/projects/github-com-knutigro-cobeziertableview)
 [![Build Status](https://travis-ci.org/knutigro/COBezierTableView.svg?branch=master)](https://travis-ci.org/knutigro/COBezierTableView)
 [![Version](https://img.shields.io/cocoapods/v/COBezierTableView.svg?style=flat)](http://cocoadocs.org/docsets/COBezierTableView)
 [![License](https://img.shields.io/cocoapods/l/COBezierTableView.svg?style=flat)](http://cocoadocs.org/docsets/COBezierTableView)
