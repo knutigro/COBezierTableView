@@ -51,10 +51,10 @@ class COBezierEditorView: UIView {
 
         pointSelector = UISegmentedControl(frame: CGRect(x: 10, y: bounds.maxY - 40, width: bounds.width - 20, height: 30))
         pointSelector.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
-        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(0)), at: 0, animated: false)
-        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(1)), at: 1, animated: false)
-        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(2)), at: 2, animated: false)
-        pointSelector.insertSegment(withTitle: NSStringFromCGPoint(bezierStaticPoint(3)), at: 3, animated: false)
+        pointSelector.insertSegment(withTitle: NSCoder.string(for: bezierStaticPoint(0)), at: 0, animated: false)
+        pointSelector.insertSegment(withTitle: NSCoder.string(for: bezierStaticPoint(1)), at: 1, animated: false)
+        pointSelector.insertSegment(withTitle: NSCoder.string(for: bezierStaticPoint(2)), at: 2, animated: false)
+        pointSelector.insertSegment(withTitle: NSCoder.string(for: bezierStaticPoint(3)), at: 3, animated: false)
         pointSelector.selectedSegmentIndex = 0
         addSubview(pointSelector)
     }
@@ -127,7 +127,7 @@ class COBezierEditorView: UIView {
                 }
                 
                 setBezierStaticPoint(pointToMove, forIndex: pointSelector.selectedSegmentIndex)
-                pointSelector.setTitle(NSStringFromCGPoint(bezierStaticPoint(pointSelector.selectedSegmentIndex)), forSegmentAt: pointSelector.selectedSegmentIndex)
+                pointSelector.setTitle(NSCoder.string(for: bezierStaticPoint(pointSelector.selectedSegmentIndex)), forSegmentAt: pointSelector.selectedSegmentIndex)
                 setNeedsDisplay()
             }
         } else if recognizer.state == .ended {
