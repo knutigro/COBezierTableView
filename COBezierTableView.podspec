@@ -17,6 +17,7 @@ Pod::Spec.new do |s|
                         Project even include classes for editing BezierPaths. When you are happy with your path, insert the static points to the BezierPoints struct in UView+Bezier.swift.
                         DESC
   s.homepage         = "https://github.com/knutigro/COBezierTableView"
+  s.swift_version    = '4.2'
   s.license          = 'MIT'
   s.author           = { "Knut Inge Grösland" => "”hei@knutinge.com”" }
   s.source           = { :git => "https://github.com/knutigro/COBezierTableView.git", :tag => s.version }
