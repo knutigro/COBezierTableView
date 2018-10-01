@@ -49,7 +49,7 @@ class COBezierEditorView: UIView {
         
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:))))
 
-        pointSelector = UISegmentedControl(frame: CGRect(x: 10, y: bounds.maxY - 40, width: bounds.width - 20, height: 30))
+        pointSelector = UISegmentedControl(frame: CGRect(x: 10, y: bounds.maxY - 80, width: bounds.width - 20, height: 30))
         pointSelector.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
         pointSelector.insertSegment(withTitle: NSCoder.string(for: bezierStaticPoint(0)), at: 0, animated: false)
         pointSelector.insertSegment(withTitle: NSCoder.string(for: bezierStaticPoint(1)), at: 1, animated: false)
